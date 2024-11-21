@@ -2,14 +2,14 @@
 
 one:
   user_attendee: one
-  event_id: 1
+  ticket_id: MyString
   name: MyString
   email: MyString
-  status: 1
+  status: false
 
 two:
   user_attendee: two
-  event_id: 1
+  ticket_id: MyString
   name: MyString
   email: MyString
-  status: 1
+  status: false

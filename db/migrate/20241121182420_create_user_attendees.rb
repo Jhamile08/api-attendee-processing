@@ -1,7 +1,8 @@
 class CreateUserAttendees < ActiveRecord::Migration[7.2]
   def change
     create_table :user_attendees do |t|
-      t.references :api_user, null: false, foreign_key: true
+      t.integer :user_id, null: false
+      t.integer :quantity_tickets
 
       t.timestamps
     end

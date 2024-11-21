@@ -2,8 +2,8 @@
 
 one:
   attendee: one
-  description: MyString
+  description: MyText
 
 two:
   attendee: two
-  description: MyString
+  description: MyText
