@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -13,10 +14,16 @@ Started GET "/docs" for 127.0.0.1 at 2024-11-21 03:00:55 -0500
 ActionController::RoutingError (No route matches [GET] "/docs"):
   
 Started GET "/" for 127.0.0.1 at 2024-11-21 03:01:38 -0500
+=======
+Started GET "/" for 127.0.0.1 at 2024-11-20 08:24:34 -0500
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+>>>>>>> develop
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by Rails::WelcomeController#index as HTML
   Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
   Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+<<<<<<< HEAD
 Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.8ms)
 
 
@@ -24,3 +31,32 @@ Started GET "/docs" for 127.0.0.1 at 2024-11-21 03:01:45 -0500
   
 ActionController::RoutingError (No route matches [GET] "/docs"):
   
+=======
+Completed 200 OK in 21ms (Views: 7.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-20 08:40:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-20 08:40:44 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-20 08:40:53 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 229ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 47.8ms)
+
+
+>>>>>>> develop
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
