@@ -11,11 +11,15 @@ Rails.application.routes.draw do
   # this is for documentation of api with Oasrails
   mount OasRails::Engine => '/docs'
 
-  # resources :event do
-  #   resources :attendees, [:summary] # /events/:event_id/attendees, # /events/:event_id/attendees/summary
+  # POST /events/:event_id/attendees
+  # get '/events/:event_id/attendees' => 'attendees#show', as: :rails_health_check
+
+  #  PATCH /attendees/:attendee_id/confirm, /attendees/:attendee_id/cancel, GET /attendees/:attendee_id/logs`
+  # resources :attendees do
+  #   resources :confirm, :cancel, :log
   # end
 
-  # resources :attendees do
-  #   resources :confirm # /attendees/:attendee_id/confirm
-  # end
+  #  GET /events/:event_id/attendees/summary
+  #  get '/events/:event_id/attendees/summary' => 'attendees#summary', as: :rails_health_check
+  #
 end
