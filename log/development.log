@@ -303,3 +303,4 @@ FOREIGN KEY ("attendee_id")
   [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ? /* loading for pp */ LIMIT ?[0m  [["user_attendee_id", 1], ["LIMIT", 11]]
   [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ? /* loading for pp */ LIMIT ?[0m  [["user_attendee_id", 1], ["LIMIT", 11]]
   [1m[36mAttendeeLog Load (0.2ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? /* loading for pp */ LIMIT ?[0m  [["attendee_id", 1], ["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
