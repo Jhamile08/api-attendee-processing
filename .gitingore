@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-tmp/cache/
-=======
 log/development.log
+/tmp/cache/bootsnap
 storage/development.sqlite3
 tmp/cache/bootsnap/load-path-cache
 tmp/local_secret.txt
->>>>>>> develop
