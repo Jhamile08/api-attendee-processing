@@ -11,14 +11,27 @@ class AttendeesController < ApplicationController
     #now we have to collect all the attendees to the event cause we are finding attendies separectly by user_attendee_id
     all_attendees_for_event = []
 
+    true_attendees = 0;
+    false_attendees = 0;
     @attendee_rules.each do |attendee_rule|
       @attendees = Attendee.where(user_attendee_id: attendee_rule.user_attendee_id).to_a
 
       all_attendees_for_event.concat(@attendees)
 
+      #count true attendees and false attendees
+      @attendees.each do |attendee| 
+        if attendee.status then
+          true_attendees += 1
+        else
+          false_attendees += 1
+        end
+      end
+
       puts "This is attendents #{@attendees}"
     end
     
+    puts "Number of attendees that will come: #{true_attendees}"
+    puts "Number of attendees that will not come: #{false_attendees}"
     
     render json: all_attendees_for_event
   end

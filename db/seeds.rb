@@ -18,13 +18,13 @@ AttendeeRule.create(user_attendee_id: 1, event_id: 1, title: "concierto Shakira"
 UserAttendee.create(user_id: 2, quantity_tickets:4)
 Attendee.create(user_attendee_id: 2, ticket_id: 4, name: "Carmen", email: "carmen@gmail.com", status: true)
 Attendee.create(user_attendee_id: 2, ticket_id: 5, name: "Sara", email: "sara@gmail.com", status: true)
-Attendee.create(user_attendee_id: 2, ticket_id: 6, name: "Gertrudis", email: "gertrudis@gmail.com", status: true)
+Attendee.create(user_attendee_id: 2, ticket_id: 6, name: "Gertrudis", email: "gertrudis@gmail.com", status: false)
 AttendeeRule.create(user_attendee_id: 2, event_id: 1, title: "concierto Shakira", description: "Concierto en Medellin")
 
 UserAttendee.create(user_id: 3, quantity_tickets:5)
 Attendee.create(user_attendee_id: 3, ticket_id: 1, name: "Pedro", email: "pedro@gmail.com", status: true)
 Attendee.create(user_attendee_id: 3, ticket_id: 2, name: "Simon", email: "simon@gmail.com", status: true)
-Attendee.create(user_attendee_id: 3, ticket_id: 3, name: "Jesus", email: "jesus@gmail.com", status: true)
+Attendee.create(user_attendee_id: 3, ticket_id: 3, name: "Jesus", email: "jesus@gmail.com", status: false)
 AttendeeRule.create(user_attendee_id: 3, event_id: 2, title: "Pasar a Globant", description: "Los 15 coders que pasaran a Globant")
 
 
