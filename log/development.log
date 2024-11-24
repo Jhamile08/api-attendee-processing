@@ -303,3 +303,203 @@ Processing by UserAttendeesController#cancel_attendee as */*
 Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.5ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started PATCH "/user_attendees/1/cancel_attendee" for ::1 at 2024-11-24 01:44:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserAttendeesController#cancel_attendee as */*
+  Parameters: {"attendee_id"=>1, "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (0.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:4:in `cancel_attendee'
+Completed 404 Not Found in 99ms (Views: 0.2ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mAttendee Load (3.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started PATCH "/user_attendees/1/cancel_attendee" for ::1 at 2024-11-24 01:46:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserAttendeesController#cancel_attendee as */*
+  Parameters: {"attendee_id"=>1, "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:4:in `cancel_attendee'
+Completed 404 Not Found in 36ms (Views: 0.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/user_attendees/1/cancel_attendee" for ::1 at 2024-11-24 01:46:55 -0500
+Processing by UserAttendeesController#cancel_attendee as */*
+  Parameters: {"attendee_id"=>2, "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (0.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:4:in `cancel_attendee'
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/user_attendees/1/cancel_attendee" for ::1 at 2024-11-24 01:48:25 -0500
+Processing by UserAttendeesController#cancel_attendee as */*
+  Parameters: {"attendee_id"=>1, "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (0.3ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:4:in `cancel_attendee'
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ? AND "attendees"."id" = ? LIMIT ?[0m  [["user_attendee_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:12:in `cancel_attendee'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_attendees_controller.rb:26:in `block in cancel_attendee'
+  [1m[36mAttendeeLog Create (0.4ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Cancellation recorded: status set to false for Attendee ID 1."], ["created_at", "2024-11-24 06:48:25.522822"], ["updated_at", "2024-11-24 06:48:25.522822"]]
+  ↳ app/controllers/user_attendees_controller.rb:26:in `block in cancel_attendee'
+  [1m[36mTRANSACTION (23.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_attendees_controller.rb:20:in `cancel_attendee'
+Completed 200 OK in 110ms (Views: 0.6ms | ActiveRecord: 27.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/user_attendees/1/cancel_attendees" for ::1 at 2024-11-24 01:48:43 -0500
+Processing by UserAttendeesController#cancel_attendees as */*
+  Parameters: {"Content-Type"=>"application/json", "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:39:in `cancel_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_attendees_controller.rb:48:in `block in cancel_attendees'
+  [1m[36mAttendee Load (1.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:48:in `block in cancel_attendees'
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Cancellation recorded: status set to false for Attendee ID 1."], ["created_at", "2024-11-24 06:48:43.754230"], ["updated_at", "2024-11-24 06:48:43.754230"]]
+  ↳ app/controllers/user_attendees_controller.rb:54:in `block (2 levels) in cancel_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_attendees_controller.rb:47:in `cancel_attendees'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/attendees/1/cancel" for ::1 at 2024-11-24 01:48:46 -0500
+Processing by AttendeesController#cancel as */*
+  Parameters: {"reason"=>"Attendee requested cancellation", "id"=>"1", "attendee"=>{}}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:5:in `cancel'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in cancel'
+  [1m[36mAttendeeLog Create (2.0ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Attendee calcel the ticket"], ["created_at", "2024-11-24 06:48:46.964690"], ["updated_at", "2024-11-24 06:48:46.964690"]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in cancel'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:12:in `cancel'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/attendees/2/cancel" for ::1 at 2024-11-24 02:03:15 -0500
+  
+SyntaxError (D:/Dev/Rails/02-OnRails/Ruby-On-Rails/Semana#4/api-attendee-processing/app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started PATCH "/attendees/1/cancel" for ::1 at 2024-11-24 02:03:21 -0500
+  
+SyntaxError (D:/Dev/Rails/02-OnRails/Ruby-On-Rails/Semana#4/api-attendee-processing/app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started PATCH "/user_attendees/1/cancel_attendee" for ::1 at 2024-11-24 02:11:24 -0500
+Processing by UserAttendeesController#cancel_attendee as */*
+  Parameters: {"attendee_id"=>1, "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (1.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:4:in `cancel_attendee'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (D:/Dev/Rails/02-OnRails/Ruby-On-Rails/Semana#4/api-attendee-processing/app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/controllers/user_attendees_controller.rb:12:in `cancel_attendee'
+Started PATCH "/user_attendees/1/cancel_attendee" for ::1 at 2024-11-24 02:11:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserAttendeesController#cancel_attendee as */*
+  Parameters: {"attendee_id"=>1, "id"=>"1", "user_attendee"=>{}}
+  [1m[36mUserAttendee Load (0.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_attendees_controller.rb:4:in `cancel_attendee'
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (D:/Dev/Rails/02-OnRails/Ruby-On-Rails/Semana#4/api-attendee-processing/app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+app/models/attendee.rb:23: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/controllers/user_attendees_controller.rb:12:in `cancel_attendee'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (41.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-24 07:23:05.149217', '2024-11-24 07:23:05.149220') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserAttendees (20241121182420)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendees (20241121182519)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer NOT NULL, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4aac93b953"
+FOREIGN KEY ("user_attendee_id")
+  REFERENCES "user_attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendees_on_user_attendee_id" ON "attendees" ("user_attendee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182519') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendeeRules (20241121182535)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer NOT NULL, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_cfd572ac90"
+FOREIGN KEY ("user_attendee_id")
+  REFERENCES "user_attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_rules_on_user_attendee_id" ON "attendee_rules" ("user_attendee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182535') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendeeLogs (20241121182547)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182547') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("user_id", "quantity_tickets", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["quantity_tickets", 10], ["created_at", "2024-11-24 07:23:13.765198"], ["updated_at", "2024-11-24 07:23:13.765198"]]
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-12345"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-12345"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-24 07:25:32.225996"], ["updated_at", "2024-11-24 07:25:32.225996"]]
+  [1m[36mTRANSACTION (33.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAttendeeLog Load (0.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? AND "attendee_logs"."description" = ? LIMIT ?[0m  [["attendee_id", 1], ["description", "Initial log entry."], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (7.8ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Initial log entry."], ["created_at", "2024-11-24 07:25:32.296059"], ["updated_at", "2024-11-24 07:25:32.296059"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started PATCH "/attendees/1/cancel" for ::1 at 2024-11-24 02:32:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#cancel as */*
+  Parameters: {"reason"=>"Attendee requested cancellation", "id"=>"1", "attendee"=>{}}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:5:in `cancel'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:14:in `block in cancel'
+  [1m[36mAttendee Update (1.8ms)[0m  [1m[33mUPDATE "attendees" SET "status" = ?, "updated_at" = ? WHERE "attendees"."id" = ?[0m  [["status", 0], ["updated_at", "2024-11-24 07:32:22.982334"], ["id", 1]]
+  ↳ app/controllers/attendees_controller.rb:14:in `block in cancel'
+  [1m[36mAttendeeLog Create (0.3ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Attendee calcel the ticket"], ["created_at", "2024-11-24 07:32:23.003969"], ["updated_at", "2024-11-24 07:32:23.003969"]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in cancel'
+  [1m[36mTRANSACTION (37.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:12:in `cancel'
+Completed 200 OK in 104ms (Views: 0.3ms | ActiveRecord: 41.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
