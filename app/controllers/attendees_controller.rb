@@ -32,6 +32,12 @@ class AttendeesController < ApplicationController
     
     puts "Number of attendees that will come: #{true_attendees}"
     puts "Number of attendees that will not come: #{false_attendees}"
+
+    #FOR THE MOMENT THE CAPACITY AVAILABLE FOR EVENT WILL BE SET BY HERE, BUT IN THE EVENT ENTITY IT SHOULD BE THE CAPACITY OF THE EVENT
+    event_capacity = 100
+
+    total_registered = true_attendees + false_attendees
+    puts "Total registered attendees: #{total_registered} and the rest of capacity available is: #{(event_capacity - total_registered)}"
     
     render json: all_attendees_for_event
   end
