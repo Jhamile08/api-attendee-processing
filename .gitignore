@@ -1,4 +1,4 @@
-log/development.log
-storage/development.sqlite3
-tmp/cache/bootsnap/load-path-cache
-tmp/local_secret.txt
+/log/development.log
+/storage/development.sqlite3
+/tmp/cache/bootsnap/load-path-cache
+/tmp/local_secret.txt
