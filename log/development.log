@@ -1211,3 +1211,89 @@ Processing by AttendeesController#create_attendees as JSON
 Completed 422 Unprocessable Content in 41ms (Views: 0.2ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:50:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 386ms (Views: 369.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 188.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:50:44 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 11:50:55 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "10"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 31ms (Views: 0.3ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 11:51:08 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "12"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "12"], ["name", "Trinidad Shields DO"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 16:51:08.323238"], ["updated_at", "2024-11-25 16:51:08.323238"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "13"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "13"], ["name", "Eloy Renner"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 16:51:08.336047"], ["updated_at", "2024-11-25 16:51:08.336047"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 8.8ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 12:10:09 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "12"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 8ms (Views: 0.2ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 12:10:28 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "14"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "14"], ["name", "Suanne Kulas DVM"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 17:10:28.428236"], ["updated_at", "2024-11-25 17:10:28.428236"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "15"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "15"], ["name", "Jama Hermiston PhD"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 17:10:28.435100"], ["updated_at", "2024-11-25 17:10:28.435100"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 7.2ms (6 queries, 0 cached) | GC: 1.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

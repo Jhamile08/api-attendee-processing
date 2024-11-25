@@ -7,8 +7,8 @@ class AttendeesController < ApplicationController
     # tickets = ticket_service.fetch_tickets
     tickets = {
       'tickets' => [
-        { 'id' => 10 },
-        { 'id' => 11 }
+        { 'id' => 14 },
+        { 'id' => 15 }
       ]
     }
     begin
@@ -24,7 +24,7 @@ class AttendeesController < ApplicationController
             ticket_id: ticket['id'],
             status: false
           )
-
+          # AttendeeMailer.confirmation_email(attendee).deliver_later
           created_attendees << attendee
         end
 

@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   get '/events/:event_id/attendees' => 'attendees#create_attendees'
 
   #  PATCH /attendees/:attendee_id/confirm, /attendees/:attendee_id/cancel, GET /attendees/:attendee_id/logs`
-  # resources :attendees do
-  #   resources :confirm, :cancel, :log
-  # end
+  resources :attendees do
+    resources :confirm, :cancel, :log
+  end
 
   #  GET /events/:event_id/attendees/summary
   #  get '/events/:event_id/attendees/summary' => 'attendees#summary', as: :rails_health_check
