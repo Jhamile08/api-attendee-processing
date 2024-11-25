@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   mount OasRails::Engine => '/docs'
 
   # POST /events/:event_id/attendees
-  # get '/events/:event_id/attendees' => 'attendees#show', as: :rails_health_check
+  get '/events/:event_id/attendees' => 'attendees#create_attendees'
 
   #  PATCH /attendees/:attendee_id/confirm, /attendees/:attendee_id/cancel, GET /attendees/:attendee_id/logs`
   # resources :attendees do

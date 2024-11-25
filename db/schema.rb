@@ -20,24 +20,22 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_21_182547) do
   end
 
   create_table "attendee_rules", force: :cascade do |t|
-    t.integer "user_attendee_id", null: false
+    t.integer "user_attendee_id"
     t.integer "event_id"
     t.string "title"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_attendee_id"], name: "index_attendee_rules_on_user_attendee_id"
   end
 
   create_table "attendees", force: :cascade do |t|
-    t.integer "user_attendee_id", null: false
+    t.integer "user_attendee_id"
     t.string "ticket_id"
     t.string "name"
     t.string "email"
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_attendee_id"], name: "index_attendees_on_user_attendee_id"
   end
 
   create_table "user_attendees", force: :cascade do |t|
@@ -48,6 +46,4 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_21_182547) do
   end
 
   add_foreign_key "attendee_logs", "attendees"
-  add_foreign_key "attendee_rules", "user_attendees"
-  add_foreign_key "attendees", "user_attendees"
 end
