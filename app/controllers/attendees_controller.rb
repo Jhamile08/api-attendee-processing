@@ -38,6 +38,13 @@ class AttendeesController < ApplicationController
 
     total_registered = true_attendees + false_attendees
     puts "Total registered attendees: #{total_registered} and the rest of capacity available is: #{(event_capacity - total_registered)}"
+
+    #generating the hash to be included
+    all_attendees_for_event << { event_capacity: event_capacity, 
+                                 attendants: true_attendees, 
+                                 non_attendants: false_attendees, 
+                                 tickets_not_sold: (event_capacity-total_registered)
+                                }
     
     render json: all_attendees_for_event
   end
