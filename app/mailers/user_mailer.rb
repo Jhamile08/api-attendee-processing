@@ -1,12 +1,12 @@
 class UserMailer < ApplicationMailer
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.confirmation.subject
-  #
-  def confirmation
-    @greeting = "Hi"
+  default from: 'no-reply@example.com'
 
-    mail to: "to@example.org"
+  # Método de confirmación de asistencia
+  def confirmation(event_name, attendee_email)
+    @event_name = event_name  # El nombre del evento
+    @url = "http://example.com/attendees/confirm?event=#{@event_name}&email=#{attendee_email}"  # Enlace de confirmación
+
+    # Enviar el correo de confirmación
+    mail(to: attendee_email, subject: "Please confirm your registration for #{@event_name}")
   end
 end
