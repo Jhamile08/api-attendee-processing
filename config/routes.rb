@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   #    resources :confirm, :cancel, :log
   # end
 
+  # resources :attendees do
+  #   patch :"confirm", :"cancel"
+  #   get :"logs"
+  # end
+
   # New Routes
   resources :attendees do
     member do  # Member block the routes for individual attendees (using :id)
@@ -28,12 +33,12 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :user_attendees do
-    member do
-      patch :cancel_attendees
-      patch :cancel_attendee
-    end
-  end    
+  # resources :user_attendees do
+  #   member do
+  #     patch :cancel_attendees
+  #     patch :cancel_attendee
+  #   end
+  # end    
 
   #  GET /events/:event_id/attendees/summary
   #  get '/events/:event_id/attendees/summary' => 'attendees#summary', as: :rails_health_check

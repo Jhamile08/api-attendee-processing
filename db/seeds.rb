@@ -21,6 +21,13 @@ attendee = Attendee.find_or_create_by(ticket_id: "TICKET-12345") do |att| # Avoi
   att.status = true # Initially active
 end
 
+attendee = Attendee.find_or_create_by(ticket_id: "TICKET-12365") do |att| # Avoid duplicate test 
+  att.user_attendee = user_attendee
+  att.name = "Pepe Doe"
+  att.email = "Pepe.doe@example.com"
+  att.status = true # Initially active
+end
+
 # Optional: Add AttendeeLogs for testing
 attendee.attendee_logs.find_or_create_by(description: "Initial log entry.")
 
