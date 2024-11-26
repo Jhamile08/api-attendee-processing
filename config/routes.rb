@@ -21,5 +21,5 @@ Rails.application.routes.draw do
 
   #  GET /events/:event_id/attendees/summary
   #  get '/events/:event_id/attendees/summary' => 'attendees#summary', as: :rails_health_check
-  #
+   get '/events/:event_id/attendees/summary/assistants' => 'attendees#assistants'
 end
