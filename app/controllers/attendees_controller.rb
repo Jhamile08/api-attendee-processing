@@ -13,6 +13,7 @@ class AttendeesController < ApplicationController
       # Registrar asistentes con estado 'false' (pendiente de confirmación)
       emails = params[:attendees][:emails]
       emails.each do |email|
+        # Aquí puedes agregar otros detalles como el nombre y ticket_id si es necesario
         Attendee.create(
           ticket_id: SecureRandom.hex(10),  # Generar un ticket ID único
           name: params[:attendees][:name],  # Nombre del asistente (puedes agregarlo al JSON)
@@ -20,10 +21,10 @@ class AttendeesController < ApplicationController
           status: false,  # Asistente creado como pendiente (no confirmado)
           event_name: event_name  # Asignar el nombre del evento
         )
+        
+        # Enviar el correo de confirmación
+        UserMailer.confirmation(event_name, email).deliver_now
       end
-  
-      # Enviar correos de confirmación
-      AttendeeMailer.confirmation_email(event_name, emails).deliver_now
   
       render json: { message: "Attendees registered successfully" }, status: :created
     end
