@@ -1437,3 +1437,563 @@ Processing by AttendeesController#summary as */*
 Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-25 06:29:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 06:30:02 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-25 06:30:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 06:30:03 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 06:30:22 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendeeRule Load (0.8ms)[0m  [1m[34mSELECT "attendee_rules".* FROM "attendee_rules" WHERE "attendee_rules"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:16:in `summary'
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 2]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 3.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 06:31:15 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendeeRule Load (0.2ms)[0m  [1m[34mSELECT "attendee_rules".* FROM "attendee_rules" WHERE "attendee_rules"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:16:in `summary'
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 2]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+Completed 200 OK in 31ms (Views: 1.1ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 16.1ms)
+
+
+Started GET "/events/2/attendees/summary" for 127.0.0.1 at 2024-11-25 06:32:26 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mAttendeeRule Load (0.3ms)[0m  [1m[34mSELECT "attendee_rules".* FROM "attendee_rules" WHERE "attendee_rules"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/controllers/attendees_controller.rb:16:in `summary'
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 3]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 10:18:37 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 15.7ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 10:18:39 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 62ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 10:18:53 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendeeRule Load (5.6ms)[0m  [1m[34mSELECT "attendee_rules".* FROM "attendee_rules" WHERE "attendee_rules"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:16:in `summary'
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."user_attendee_id" = ?[0m  [["user_attendee_id", 2]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in summary'
+Completed 200 OK in 61ms (Views: 3.5ms | ActiveRecord: 5.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:04:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:04:43 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:34: syntax error, unexpected `do'
+...    tickets.each do |ticket| do
+...                             ^~
+/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:52: syntax error, unexpected `end'
+    end
+    ^~~
+):
+  
+app/controllers/attendees_controller.rb:34: syntax error, unexpected `do'
+app/controllers/attendees_controller.rb:52: syntax error, unexpected `end'
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:04:48 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:04:48 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:34: syntax error, unexpected `do'
+...    tickets.each do |ticket| do
+...                             ^~
+/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:52: syntax error, unexpected `end'
+    end
+    ^~~
+):
+  
+app/controllers/attendees_controller.rb:34: syntax error, unexpected `do'
+app/controllers/attendees_controller.rb:52: syntax error, unexpected `end'
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:05:01 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:05:01 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 8.4ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:05:50 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:05:50 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:06:01 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:31:in `summary'
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/attendees_controller.rb:35:in `[]'
+app/controllers/attendees_controller.rb:35:in `block (2 levels) in summary'
+app/controllers/attendees_controller.rb:34:in `each'
+app/controllers/attendees_controller.rb:34:in `block in summary'
+app/controllers/attendees_controller.rb:31:in `summary'
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:07:15 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:07:15 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:07:19 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:31:in `summary'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:08:50 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:08:51 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:08:54 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.5ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:31:in `summary'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:09:44 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:09:45 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 41ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.2ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:09:48 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+  
+NoMethodError (undefined method `put' for #<AttendeesController:0x00000000019ca8>):
+  
+app/controllers/attendees_controller.rb:34:in `block in summary'
+app/controllers/attendees_controller.rb:32:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:09:56 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:11:22 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:11:22 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:11:25 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:12:18 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 9.5ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:14:05 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:14:56 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+NoMethodError (undefined method `id' for {:id=>1, :event_id=>1}:Hash):
+  
+app/controllers/attendees_controller.rb:37:in `block (2 levels) in summary'
+app/controllers/attendees_controller.rb:35:in `each'
+app/controllers/attendees_controller.rb:35:in `block in summary'
+app/controllers/attendees_controller.rb:32:in `summary'
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:15:53 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-25 11:15:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:15:53 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 64ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:15:57 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:16:33 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:17:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:17:39 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 6.8ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:18:26 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:20:07 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:20:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:20:35 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 113ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 45.4ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:20:37 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.5ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:22:31 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-25 11:22:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:22:32 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:22:35 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+  
+NoMethodError (undefined method `Class' for "1":String):
+  
+app/controllers/attendees_controller.rb:36:in `block (2 levels) in summary'
+app/controllers/attendees_controller.rb:35:in `each'
+app/controllers/attendees_controller.rb:35:in `block in summary'
+app/controllers/attendees_controller.rb:32:in `summary'
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:22:49 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:22:50 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:22:52 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:24:09 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:24:09 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:24:12 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:24:53 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:24:54 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 40ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 13.3ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:24:58 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:25:33 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:25:33 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 47ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:25:36 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:26:25 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:26:25 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AllAttendeesForEvent
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:26:28 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 19ms (Views: 1.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 7.8ms)
+
+
+Started GET "/events/2/attendees/summary" for 127.0.0.1 at 2024-11-25 11:26:39 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mAttendee Load (1.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events/2/attendees/summary" for 127.0.0.1 at 2024-11-25 11:28:45 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-25 11:32:32 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/2/attendees/summary" for 127.0.0.1 at 2024-11-25 11:48:03 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"2"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:32:in `summary'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+

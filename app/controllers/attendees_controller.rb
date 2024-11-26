@@ -6,28 +6,54 @@ class AttendeesController < ApplicationController
 
     #with this consult we will find the attendee rules that belongs to that specify event and with the attendee_rules filtered
     #now he have the attendee_rule where we can get  the user_attendee_id for filter by user_attendee_id that belongs to that specific event
-    @attendee_rules = AttendeeRule.where(event_id: params[:event_id])
+    @attendees = Attendee.all
 
     #now we have to collect all the attendees to the event cause we are finding attendies separectly by user_attendee_id
     all_attendees_for_event = []
 
+    #Simulating tickets
+    tickets = {
+      'tickets' => [
+        { id: 1, event_id:  1 },
+        { id: 2, event_id:  1 },
+        { id: 3, event_id:  1 },
+        { id: 4, event_id:  1 },
+        { id: 5, event_id:  2 },
+        { id: 6, event_id:  2 },
+        { id: 7, event_id:  2 },
+        { id: 8, event_id:  2 },
+      ]
+    }
+    
+
     true_attendees = 0;
     false_attendees = 0;
-    @attendee_rules.each do |attendee_rule|
-      @attendees = Attendee.where(user_attendee_id: attendee_rule.user_attendee_id).to_a
-
-      all_attendees_for_event.concat(@attendees)
-
-      #count true attendees and false attendees
-      @attendees.each do |attendee| 
-        if attendee.status then
-          true_attendees += 1
-        else
-          false_attendees += 1
+    
+    @attendees.each do |attendee|
+      
+      puts attendee
+      tickets['tickets'].each do |ticket| 
+        puts "Este es el tiquete de base de datos #{(attendee.ticket_id).to_i.class}"
+        puts "Este es el tiquete de json #{ticket[:id].class}"
+        if (attendee.ticket_id).to_i == ticket[:id]
+          puts "Entro al padre"
+          if params[:event_id].to_i == ticket[:event_id] 
+            puts "EVENTO SIMILARES"
+            all_attendees_for_event << attendee
+            if attendee.status 
+              true_attendees += 1
+            else
+              false_attendees += 1
+            end
+          else
+            puts "NO ENTRO"
+          end
         end
       end
+      
 
-      puts "This is attendents #{@attendees}"
+
+
     end
     
     puts "Number of attendees that will come: #{true_attendees}"
