@@ -81,22 +81,27 @@ class AttendeesController < ApplicationController
 
 
     page_count = 0
-    puts "HWYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+
+    #Organize pagination
+    if all_attendees_for_event.size % @size != 0
+      #this is when the last page is not multiple of size
+      new_page = all_attendees_for_event.size % @size
+    end
+    
     all_attendees_for_event.each_with_index do |attendee, index|
-      puts "entro al ciclo"
-      puts "size #{@size*@page}"
-      puts "index #{index}"
+      
       if index < (@size*@page)
-        puts "SIIIIIIIIIIIIIIIIIII"
-        if true
-          if ((index+1) % @size) == 0
+        
+        
+          if ((index+1) % @size) == 0 && @page != page_count
             attendees_paginate << attendee
-            puts "Seteo"
-            page_count += 1
-            page = "page" + ((index + 1)/@size).to_s
-            puts "THIS IS PAGEEEEEEE #{page}"
+            
+              page_count += 1
+            
+            page_num = "page" + ((index + 1)/@size).to_s
+            
             pageNumber = {
-              page => {
+              page_num => {
                 attendees: attendees_paginate
               }
             }
@@ -106,10 +111,21 @@ class AttendeesController < ApplicationController
             attendees_paginate_show << pageNumber
           else
             attendees_paginate << attendee
+            if  page_count == (@page -1)
+              
+              if (@page*@size - (index+1)) % new_page == 0
+                page_num = "page" + (@page).to_s
+            
+                pageNumber = {
+                  page_num => {
+                    attendees: attendees_paginate
+                  }
+                }
+                attendees_paginate_show << pageNumber
+              end
+            end
           end
-        else
-          attendees_paginate << attendee
-        end
+        
       else
         break;
       end
