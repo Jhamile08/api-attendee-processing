@@ -1,43 +1,17 @@
 class AttendeesController < ApplicationController
-
   # @summary Returns a list of Attendees.
-  # 
+  #
   # @parameter size(query) [Integer]  Used for pagination of response data (default: 5 items per response).
-  # @parameter page(query) [Integer]   choose the numer of pages you want to see
+  # @parameter page(query) [Integer]   choose the number of pages you want to see
   def summary
-    
-    #params[:event_id] returns the id of the event sent in the URL
-    #
     # Params for pagination
-    if params[:size] == nil
-      @size = 5
-    end
+    @size = (params[:size].to_i > 0 ? params[:size].to_i : 5) # Default to 5 if size is not provided
+    @page = (params[:page].to_i > 0 ? params[:page].to_i : 1) # Default to page 1 if page is not provided
 
-    if params[:page] == nil
-      @page = 1
-    end
-
-    puts "THIS IS SIZE: #{@size} and this is page #{@page}"
-
-    #when send page and size convert to string
-    
-    if params[:size] != nil
-      @size = params[:size].to_i
-    end
-
-    if params[:page] != nil
-      @page = params[:page].to_i
-    end
-
-
-    #with this consult we will find the attendee rules that belongs to that specify event and with the attendee_rules filtered
-    #now he have the attendee_rule where we can get  the user_attendee_id for filter by user_attendee_id that belongs to that specific event
+    # Fetch all attendees
     @attendees = Attendee.all
 
-    #now we have to collect all the attendees to the event cause we are finding attendies separectly by user_attendee_id
-    all_attendees_for_event = []
-
-    #Simulating tickets
+    # Simulating tickets (to be replaced by actual ticket retrieval logic)
     tickets = {
       'tickets' => [
         { id: 1, event_id:  1 },
@@ -47,126 +21,66 @@ class AttendeesController < ApplicationController
         { id: 5, event_id:  1 },
         { id: 6, event_id:  2 },
         { id: 7, event_id:  2 },
-        { id: 8, event_id:  2 },
+        { id: 8, event_id:  2 }
       ]
     }
-    
 
-    true_attendees = 0;
-    false_attendees = 0;
-    
+    true_attendees = 0
+    false_attendees = 0
+    all_attendees_for_event = []
+
+    # Iterate through attendees and match them with tickets
     @attendees.each do |attendee|
-      
-      puts attendee
-      tickets['tickets'].each do |ticket| 
-        puts "Este es el tiquete de base de datos #{(attendee.ticket_id).to_i.class}"
-        puts "Este es el tiquete de json #{ticket[:id].class}"
-        if (attendee.ticket_id).to_i == ticket[:id]
-          puts "Entro al padre"
-          if params[:event_id].to_i == ticket[:event_id] 
-            puts "EVENTO SIMILARES"
-            all_attendees_for_event << attendee
-            if attendee.status 
-              true_attendees += 1
-            else
-              false_attendees += 1
-            end
-          else
-            puts "NO ENTRO"
-          end
+      tickets['tickets'].each do |ticket|
+        next unless attendee.ticket_id.present? && ticket[:id].present? && attendee.ticket_id.to_i == ticket[:id]
+
+        # Check if the attendee is for the correct event
+        next unless params[:event_id].to_i == ticket[:event_id]
+
+        all_attendees_for_event << attendee
+        if attendee.status
+          true_attendees += 1
+        else
+          false_attendees += 1
         end
       end
-      
     end
 
-    #pagination
-    #
-    attendees_paginate = []
-    attendees_paginate_show = []
-
-
-    page_count = 0
-
-    #Organize pagination
-    if all_attendees_for_event.size % @size != 0
-      #this is when the last page is not multiple of size
-      new_page = all_attendees_for_event.size % @size
+    # Handle empty event case to avoid division by zero
+    if all_attendees_for_event.size == 0
+      render json: { error: 'No attendees found for the event' }, status: 404
+      return
     end
-    
-    all_attendees_for_event.each_with_index do |attendee, index|
-      
-      if index < (@size*@page)
-        
-        
-          if ((index+1) % @size) == 0 && @page != page_count
-            attendees_paginate << attendee
-            
-              page_count += 1
-            
-            page_num = "page" + ((index + 1)/@size).to_s
-            
-            pageNumber = {
-              page_num => {
-                attendees: attendees_paginate
-              }
-            }
-            attendees_paginate = []
 
-            puts "pageNumber #{pageNumber}"
-            attendees_paginate_show << pageNumber
-          else
-          
-            if  page_count == (@page -1)
-              
-              if (@page*@size - (index+1)) % new_page == 0
-                page_num = "page" + (@page).to_s
-            
-                pageNumber = {
-                  page_num => {
-                    attendees: attendees_paginate
-                  }
-                }
-                attendees_paginate_show << pageNumber
-              end
-            end
-            # if ((@page*@size) > all_attendees_for_event.size) && ((@page*@size) -all_attendees_for_event.size) > @size
-            #   if ((all_attendees_for_event.size/@size).to_i == (page_count+1))
-            #     page_num = "page" + (page_count + 1).to_s
-            
-            #     pageNumber = {
-            #       page_num => {
-            #         attendees: attendees_paginate
-            #       }
-            #     }
-            #     attendees_paginate_show << pageNumber
-            #   end
-            # end
+    # Pagination logic with division by zero prevention
+    total_attendees = all_attendees_for_event.size
 
-            attendees_paginate << attendee
-          end
-        
-      else
-        break;
-      end
+    # Validate that the page and size parameters result in valid indices
+    start_index = (@page - 1) * @size
+    end_index = [start_index + @size - 1, total_attendees - 1].min
 
+    # Ensure that pagination indices are valid (avoid negative values or out-of-bounds)
+    if start_index >= total_attendees
+      render json: { error: 'Page number out of range' }, status: 400
+      return
     end
-    
-    puts "Number of attendees that will come: #{true_attendees}"
-    puts "Number of attendees that will not come: #{false_attendees}"
 
-    #FOR THE MOMENT THE CAPACITY AVAILABLE FOR EVENT WILL BE SET BY HERE, BUT IN THE EVENT ENTITY IT SHOULD BE THE CAPACITY OF THE EVENT
+    paginated_attendees = all_attendees_for_event[start_index..end_index]
+
+    # Event capacity
     event_capacity = 100
-
     total_registered = true_attendees + false_attendees
-    puts "Total registered attendees: #{total_registered} and the rest of capacity available is: #{(event_capacity - total_registered)}"
+    available_capacity = event_capacity - total_registered
 
-    #generating the hash to be included
-    all_attendees_for_event << { event_capacity: event_capacity, 
-                                 attendants: true_attendees, 
-                                 non_attendants: false_attendees, 
-                                 tickets_not_sold: (event_capacity-total_registered)
-                                }
-    
-    render json: attendees_paginate_show
+    # Prepare the response
+    result = {
+      event_capacity: event_capacity,
+      attendants: true_attendees,
+      non_attendants: false_attendees,
+      tickets_not_sold: available_capacity,
+      attendees: paginated_attendees
+    }
+
+    render json: result
   end
 end
