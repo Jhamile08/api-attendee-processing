@@ -3,7 +3,11 @@ class AttendeesController < ApplicationController
     attendee = Attendee.find_by(id: params[:id])
     if attendee
       logs = attendee.attendee_logs
-      render json: logs, status: :ok
+      if logs.any?
+        render json: { status: 'success', logs: logs }, status: :ok
+      else
+        render json: { status: 'error', message: 'No se encontraron logs para este Attendee' }, status: :not_found
+      end
     else
       render json: { error: 'Attendee not found' }, status: :not_found
     end

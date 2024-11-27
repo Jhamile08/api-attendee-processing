@@ -3617,3 +3617,720 @@ Causes:
 ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: user_attendees.event_id)
 SQLite3::ConstraintException (NOT NULL constraint failed: user_attendees.event_id)
   
+Started POST "/rails/actions" for 127.0.0.1 at 2024-11-27 11:39:41 -0500
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","user_id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","user_id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+SQLite3::ConstraintException: NOT NULL constraint failed: user_attendees.event_id):
+
+Causes:
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: user_attendees.event_id)
+SQLite3::ConstraintException (NOT NULL constraint failed: user_attendees.event_id)
+  
+  [1m[36mUserAttendee Load (1.7ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","user_id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","user_id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","user_id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","user_id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","user_id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","user_id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_logs"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_rules"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendees"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aattendee_logs_on_attendee_id" ON "aattendee_logs" ("attendee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aattendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "attendee_logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "attendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "aattendee_logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aattendee_logs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241126113810)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241121182547),
+(20241121182535),
+(20241121182519),
+(20241121182420);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-27 16:44:45.912971', '2024-11-27 16:44:45.912974') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '59e6909c0130bddda92eb1a887fc5e1a49328c35', '2024-11-27 16:44:45.922976', '2024-11-27 16:44:45.922979') RETURNING "key"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_logs"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_rules"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aattendee_logs_on_attendee_id" ON "aattendee_logs" ("attendee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aattendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "attendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "attendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "aattendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aattendee_logs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241126113810)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241121182547),
+(20241121182535),
+(20241121182519),
+(20241121182420);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-27 16:44:45.962660', '2024-11-27 16:44:45.962662') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-11-27 16:44:45.964503' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '59e6909c0130bddda92eb1a887fc5e1a49328c35', '2024-11-27 16:44:45.966295', '2024-11-27 16:44:45.966297') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 11:45:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 229ms (Views: 217.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 84.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 11:45:01 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant Log
+Completed 200 OK in 64ms (Views: 0.1ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/rails/actions" for 127.0.0.1 at 2024-11-27 11:45:07 -0500
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-27 11:45:07 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Load (0.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:50:11.465463"], ["updated_at", "2024-11-27 16:50:11.465463"], ["event_id", 101]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.4ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:50:11.470565"], ["updated_at", "2024-11-27 16:50:11.470565"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-001"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-001"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:50:11.486791"], ["updated_at", "2024-11-27 16:50:11.486791"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (32.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-002"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-002"], ["name", "Jane Smith"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-27 16:50:11.530552"], ["updated_at", "2024-11-27 16:50:11.530552"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-003"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 2], ["ticket_id", "TICKET-003"], ["name", "Alex Johnson"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:50:11.540652"], ["updated_at", "2024-11-27 16:50:11.540652"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (2.0ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.2ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Attendee checked in at the event."], ["created_at", "2024-11-27 16:50:11.560485"], ["updated_at", "2024-11-27 16:50:11.560485"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 2], ["description", "Attendee attended workshop A."], ["created_at", "2024-11-27 16:50:11.565602"], ["updated_at", "2024-11-27 16:50:11.565602"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 3], ["description", "Attendee registered for the event."], ["created_at", "2024-11-27 16:50:11.570665"], ["updated_at", "2024-11-27 16:50:11.570665"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["event_id", 101], ["title", "No Alcohol Policy"], ["description", "No alcohol is allowed at the event."], ["created_at", "2024-11-27 16:50:11.581224"], ["updated_at", "2024-11-27 16:50:11.581224"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (0.9ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["event_id", 102], ["title", "Entry Time"], ["description", "Attendees should arrive 30 minutes before the event starts."], ["created_at", "2024-11-27 16:50:11.585654"], ["updated_at", "2024-11-27 16:50:11.585654"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 11:50:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 224ms (Views: 214.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 75.8ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 11:50:25 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant Log
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-27 11:50:48 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+  [1m[36mAttendeeLog Load (0.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ?[0m  [["attendee_id", 1]]
+  ↳ app/controllers/attendees_controller.rb:6:in `logs'
+Completed 200 OK in 26ms (Views: 6.0ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/22/logs" for 127.0.0.1 at 2024-11-27 11:50:55 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-27 11:51:02 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "14"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.5ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "14"], ["name", "Michele Smith"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-27 16:51:02.660372"], ["updated_at", "2024-11-27 16:51:02.660372"]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "15"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "15"], ["name", "Msgr. Adrian Von"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-27 16:51:02.665698"], ["updated_at", "2024-11-27 16:51:02.665698"]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:25:in `create_attendees'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 4.1ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/101/attendees" for 127.0.0.1 at 2024-11-27 11:51:26 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"101"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "14"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:30:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:25:in `create_attendees'
+Completed 422 Unprocessable Content in 8ms (Views: 0.2ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/user_attendees/show_user_attendees" for 127.0.0.1 at 2024-11-27 11:51:41 -0500
+Processing by UserAttendeesController#show_user_attendees as JSON
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/user_attendees_controller.rb:4:in `show_user_attendees'
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 13.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:54:05.276641"], ["updated_at", "2024-11-27 16:54:05.276641"], ["event_id", 101]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:54:05.281837"], ["updated_at", "2024-11-27 16:54:05.281837"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-001"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:54:32.385124"], ["updated_at", "2024-11-27 16:54:32.385124"], ["event_id", 101]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:54:32.390600"], ["updated_at", "2024-11-27 16:54:32.390600"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-002"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.4ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:55:11.284082"], ["updated_at", "2024-11-27 16:55:11.284082"], ["event_id", 101]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:55:11.290051"], ["updated_at", "2024-11-27 16:55:11.290051"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0011"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 7], ["ticket_id", "TICKET-0011"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:55:11.305948"], ["updated_at", "2024-11-27 16:55:11.305948"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0021"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 7], ["ticket_id", "TICKET-0021"], ["name", "Jane Smith"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-27 16:55:11.345257"], ["updated_at", "2024-11-27 16:55:11.345257"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0031"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 8], ["ticket_id", "TICKET-0031"], ["name", "Alex Johnson"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:55:11.351265"], ["updated_at", "2024-11-27 16:55:11.351265"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 6], ["description", "Attendee checked in at the event."], ["created_at", "2024-11-27 16:55:11.362723"], ["updated_at", "2024-11-27 16:55:11.362723"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.0ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 7], ["description", "Attendee attended workshop A."], ["created_at", "2024-11-27 16:55:11.367536"], ["updated_at", "2024-11-27 16:55:11.367536"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.5ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 7], ["event_id", 101], ["title", "No Alcohol Policy"], ["description", "No alcohol is allowed at the event."], ["created_at", "2024-11-27 16:55:11.377476"], ["updated_at", "2024-11-27 16:55:11.377476"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.3ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 7], ["event_id", 102], ["title", "Entry Time"], ["description", "Attendees should arrive 30 minutes before the event starts."], ["created_at", "2024-11-27 16:55:11.383026"], ["updated_at", "2024-11-27 16:55:11.383026"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/attendees/3/logs" for 127.0.0.1 at 2024-11-27 11:55:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+  [1m[36mAttendeeLog Load (0.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ?[0m  [["attendee_id", 3]]
+  ↳ app/controllers/attendees_controller.rb:6:in `logs'
+Completed 200 OK in 56ms (Views: 6.6ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 25.5ms)
+
+
+Started GET "/attendees/4/logs" for 127.0.0.1 at 2024-11-27 11:55:58 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+  [1m[36mAttendeeLog Load (0.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ?[0m  [["attendee_id", 4]]
+  ↳ app/controllers/attendees_controller.rb:6:in `logs'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 11:58:53 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 213ms (Views: 209.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 62.3ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 11:58:54 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/3/logs" for 127.0.0.1 at 2024-11-27 11:59:01 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+  [1m[36mAttendeeLog Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? LIMIT ?[0m  [["attendee_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:6:in `logs'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `all_logs' for #<AttendeesController:0x0000000000dd40>):
+  
+app/controllers/attendees_controller.rb:7:in `logs'
+Started GET "/attendees/3/logs" for 127.0.0.1 at 2024-11-27 11:59:13 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+  [1m[36mAttendeeLog Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? LIMIT ?[0m  [["attendee_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:6:in `logs'
+  [1m[36mAttendeeLog Load (0.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ?[0m  [["attendee_id", 3]]
+  ↳ app/controllers/attendees_controller.rb:7:in `logs'
+Completed 200 OK in 14ms (Views: 2.7ms | ActiveRecord: 1.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (5.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_logs"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_rules"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aattendee_logs_on_attendee_id" ON "aattendee_logs" ("attendee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aattendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "attendee_logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "attendee_logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "aattendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aattendee_logs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241126113810)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241121182547),
+(20241121182535),
+(20241121182519),
+(20241121182420);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-27 16:59:28.150324', '2024-11-27 16:59:28.150327') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '59e6909c0130bddda92eb1a887fc5e1a49328c35', '2024-11-27 16:59:28.152971', '2024-11-27 16:59:28.152973') RETURNING "key"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_logs"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendee_rules"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aattendee_logs_on_attendee_id" ON "aattendee_logs" ("attendee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aattendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "attendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "attendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("id","attendee_id","description","created_at","updated_at")
+                     SELECT "id","attendee_id","description","created_at","updated_at" FROM "aattendee_logs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aattendee_logs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241126113810)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241121182547),
+(20241121182535),
+(20241121182519),
+(20241121182420);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-27 16:59:28.188933', '2024-11-27 16:59:28.188936') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-11-27 16:59:28.190479' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '59e6909c0130bddda92eb1a887fc5e1a49328c35', '2024-11-27 16:59:28.193764', '2024-11-27 16:59:28.193767') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:59:28.217606"], ["updated_at", "2024-11-27 16:59:28.217606"], ["event_id", 101]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (0.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:59:28.222466"], ["updated_at", "2024-11-27 16:59:28.222466"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0011"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-0011"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:59:28.236196"], ["updated_at", "2024-11-27 16:59:28.236196"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0021"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-0021"], ["name", "Jane Smith"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-27 16:59:28.241457"], ["updated_at", "2024-11-27 16:59:28.241457"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0031"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 2], ["ticket_id", "TICKET-0031"], ["name", "Alex Johnson"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:59:28.246825"], ["updated_at", "2024-11-27 16:59:28.246825"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 1], ["description", "Attendee checked in at the event."], ["created_at", "2024-11-27 16:59:28.257890"], ["updated_at", "2024-11-27 16:59:28.257890"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 2], ["description", "Attendee attended workshop A."], ["created_at", "2024-11-27 16:59:28.262289"], ["updated_at", "2024-11-27 16:59:28.262289"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.6ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["event_id", 101], ["title", "No Alcohol Policy"], ["description", "No alcohol is allowed at the event."], ["created_at", "2024-11-27 16:59:28.276845"], ["updated_at", "2024-11-27 16:59:28.276845"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["event_id", 102], ["title", "Entry Time"], ["description", "Attendees should arrive 30 minutes before the event starts."], ["created_at", "2024-11-27 16:59:28.281600"], ["updated_at", "2024-11-27 16:59:28.281600"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:59:31.431968"], ["updated_at", "2024-11-27 16:59:31.431968"], ["event_id", 101]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:59:31.440586"], ["updated_at", "2024-11-27 16:59:31.440586"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-0011"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-27 16:59:56.387561"], ["updated_at", "2024-11-27 16:59:56.387561"], ["event_id", 101]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-27 16:59:56.392742"], ["updated_at", "2024-11-27 16:59:56.392742"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-20011"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 5], ["ticket_id", "TICKET-20011"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:59:56.409509"], ["updated_at", "2024-11-27 16:59:56.409509"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-20021"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 5], ["ticket_id", "TICKET-20021"], ["name", "Jane Smith"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-27 16:59:56.448490"], ["updated_at", "2024-11-27 16:59:56.448490"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET-20031"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 6], ["ticket_id", "TICKET-20031"], ["name", "Alex Johnson"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-27 16:59:56.454223"], ["updated_at", "2024-11-27 16:59:56.454223"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 4], ["description", "Attendee checked in at the event."], ["created_at", "2024-11-27 16:59:56.465556"], ["updated_at", "2024-11-27 16:59:56.465556"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 5], ["description", "Attendee attended workshop A."], ["created_at", "2024-11-27 16:59:56.470119"], ["updated_at", "2024-11-27 16:59:56.470119"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.4ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 5], ["event_id", 101], ["title", "No Alcohol Policy"], ["description", "No alcohol is allowed at the event."], ["created_at", "2024-11-27 16:59:56.479708"], ["updated_at", "2024-11-27 16:59:56.479708"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Load (1.6ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (0.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 5], ["event_id", 102], ["title", "Entry Time"], ["description", "Attendees should arrive 30 minutes before the event starts."], ["created_at", "2024-11-27 16:59:56.485226"], ["updated_at", "2024-11-27 16:59:56.485226"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 12:00:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 221ms (Views: 212.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 74.6ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 12:00:23 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 50ms (Views: 0.1ms | ActiveRecord: 0.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/3/logs" for 127.0.0.1 at 2024-11-27 12:00:28 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:3:in `logs'
+  [1m[36mAttendeeLog Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? LIMIT ?[0m  [["attendee_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:6:in `logs'
+Completed 404 Not Found in 20ms (Views: 0.2ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
