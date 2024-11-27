@@ -1,4 +1,32 @@
 class AttendeesController < ApplicationController
+  # @summary Returns a list of Attendees.
+  #
+  # @parameter size(query) [Integer]  Used for pagination of response data (default: 5 items per response).
+  # @parameter page(query) [Integer]   choose the numer of pages you want to see
+  def summary
+    # params[:event_id] returns the id of the event sent in the URL
+    #
+    # Params for pagination
+    @size = 5 if params[:size].nil?
+
+    @page = 1 if params[:page].nil?
+
+    puts "THIS IS SIZE: #{@size} and this is page #{@page}"
+
+    # when send page and size convert to string
+
+    @size = params[:size].to_i unless params[:size].nil?
+
+    @page = params[:page].to_i unless params[:page].nil?
+
+    # with this consult we will find the attendee rules that belongs to that specify event and with the attendee_rules filtered
+    # now he have the attendee_rule where we can get  the user_attendee_id for filter by user_attendee_id that belongs to that specific event
+    @attendees = Attendee.all
+
+    # now we have to collect all the attendees to the event cause we are finding attendies separectly by user_attendee_id
+    all_attendees_for_event = []
+  end
+
   def assistants
     # params[:event_id] returns the id of the event sent in the URL
 
@@ -10,6 +38,7 @@ class AttendeesController < ApplicationController
     all_attendees_for_event = []
 
     # Simulating tickets
+
     tickets = {
       'tickets' => [
         { id: 1, event_id:  1 },

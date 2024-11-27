@@ -1,6 +1,19 @@
+<<<<<<< HEAD
+/log/development.log
+/storage/development.sqlite3
+/storage/development.sqlite3-shm
+/storage/development.sqlite3-wal 
+/tmp/cache/bootsnap/load-path-cache
+/tmp/local_secret.txt
+/tmp/cache/bootsnap/*
+/tpm/
+/db/seeds.rb
+
+=======
 log/development.log
 storage/development.sqlite3
 tmp/cache/bootsnap/load-path-cache
 tmp/local_secret.txt
 storage/*.sqlite3-*
 tmp/cache/bootsnap/
+>>>>>>> develop
