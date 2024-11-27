@@ -1,4 +1,14 @@
 class AttendeesController < ApplicationController
+  def logs
+    attendee = Attendee.find_by(id: params[:id])
+    if attendee
+      logs = attendee.attendee_logs
+      render json: logs, status: :ok
+    else
+      render json: { error: 'Attendee not found' }, status: :not_found
+    end
+  end
+
   def create_attendees
     # Crear una instancia del servicio y obtener los tickets
     # ticket_service = TicketService.new("https://api.ejemplo.com/tickets")

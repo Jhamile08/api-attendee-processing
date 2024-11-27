@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/events/:event_id/attendees' => 'attendees#create_attendees'
 
   #  PATCH /attendees/:attendee_id/confirm, /attendees/:attendee_id/cancel, GET /attendees/:attendee_id/logs`
+
   resources :attendees do
     member do
       patch :confirm
@@ -29,4 +30,12 @@ Rails.application.routes.draw do
   #  GET /events/:event_id/attendees/summary
   #  get '/events/:event_id/attendees/summary' => 'attendees#summary', as: :rails_health_check
   #
+
+  # GET /attendees/:attendee_id/logs
+  # get 'attendees/:attendee_id/logs', to: 'attendees#logs', as: 'attendee_logs'
+  # resources :attendees do
+  #   member do
+  #     get :"logs"
+  #   end
+  # end
 end
