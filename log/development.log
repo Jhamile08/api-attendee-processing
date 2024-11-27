@@ -200,3 +200,2205 @@ FOREIGN KEY ("attendee_id")
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mAttendeeRule Load (0.2ms)[0m  [1m[34mSELECT "attendee_rules".* FROM "attendee_rules" WHERE "attendee_rules"."user_attendee_id" = ? /* loading for pp */ LIMIT ?[0m  [["user_attendee_id", 1], ["LIMIT", 11]]
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:24:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 367ms (Views: 331.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 176.1ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:24:03 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-24 18:24:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:25:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 388ms (Views: 382.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 187.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-24 18:25:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:25:49 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 65ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 19.8ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:26:14 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:7:in `block in create_attendees'
+Completed 200 OK in 73ms (Views: 0.4ms | ActiveRecord: 9.9ms (10 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:27:58 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:27:58 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:28:45 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:28:45 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:28:49 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 10.0ms (10 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:30:13 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:30:13 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.8ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:30:22 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:30:22 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:30:27 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 200 OK in 56ms (Views: 0.3ms | ActiveRecord: 11.9ms (10 queries, 0 cached) | GC: 7.7ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:31:30 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:31:30 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:31:34 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 200 OK in 55ms (Views: 0.3ms | ActiveRecord: 11.7ms (10 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:32:18 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 200 OK in 52ms (Views: 0.3ms | ActiveRecord: 9.5ms (10 queries, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:33:42 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:33:42 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:33:45 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 422 Unprocessable Content in 29ms (ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 7.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User attendee must exist):
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:36:51 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:36:52 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:36:55 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.3ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (UserAttendee(#74280) expected, got 1 which is an instance of Integer(#2580)):
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAttendeeLogs (20241121182547)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "attendee_logs"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20241121182547'[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAttendeeRules (20241121182535)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "attendee_rules"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20241121182535'[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendees (20241121182519)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "attendees"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20241121182519'[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserAttendees (20241121182420)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20241121182420'[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserAttendees (20241121182420)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendees (20241121182519)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182519') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendeeRules (20241121182535)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182535') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendeeLogs (20241121182547)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182547') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:42:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 394ms (Views: 375.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 191.1ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:42:39 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:42:42 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (UserAttendee(#19120) expected, got 1 which is an instance of Integer(#2580)):
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:43:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 246ms (Views: 237.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 95.5ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-24 18:43:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:43:14 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 11.3ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:43:17 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 2.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_attendee' for Attendee.):
+
+Causes:
+NoMethodError (undefined method `user_attendee=' for #<Attendee id: nil, user_attendee_id: nil, ticket_id: nil, name: nil, email: nil, status: nil, created_at: nil, updated_at: nil>)
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:44:22 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:44:22 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:44:26 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "1"], ["name", "Joel Howell JD"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-24 23:44:26.609628"], ["updated_at", "2024-11-24 23:44:26.609628"]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 200 OK in 74ms (Views: 0.3ms | ActiveRecord: 15.1ms (11 queries, 0 cached) | GC: 13.9ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 18:47:59 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 18:48:00 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events//attendees" for 127.0.0.1 at 2024-11-24 18:48:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/attendees"):
+  
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 18:48:07 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 422 Unprocessable Content in 23ms (ActiveRecord: 2.6ms (2 queries, 0 cached) | GC: 9.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Ticket has already been taken):
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+Started GET "/events/4/attendees" for 127.0.0.1 at 2024-11-24 19:17:39 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"4"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 422 Unprocessable Content in 9ms (ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Ticket has already been taken):
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+Started GET "/events/4/attendees" for 127.0.0.1 at 2024-11-24 19:17:46 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"4"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 422 Unprocessable Content in 22ms (ActiveRecord: 3.1ms (2 queries, 0 cached) | GC: 5.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Ticket has already been taken):
+  
+app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+app/controllers/attendees_controller.rb:7:in `times'
+app/controllers/attendees_controller.rb:7:in `create_attendees'
+Started GET "/events/4/attendees" for 127.0.0.1 at 2024-11-24 19:18:07 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"4"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "2"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "2"], ["name", "Keli Krajcik"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 00:18:08.016765"], ["updated_at", "2024-11-25 00:18:08.016765"]]
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:8:in `block in create_attendees'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 5.2ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-24 19:49:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 421ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 193.4ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 19:49:57 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 19:49:57 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 43ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:50:21 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 422 Unprocessable Content in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/2/attendees" for 127.0.0.1 at 2024-11-24 19:50:29 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"2"}
+Completed 422 Unprocessable Content in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 19:50:33 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 19:50:34 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:50:39 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 422 Unprocessable Content in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:51:14 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 422 Unprocessable Content in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 19:53:02 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 19:53:02 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:53:06 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+Completed 422 Unprocessable Content in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 19:55:25 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 19:55:26 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:55:29 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+Completed 422 Unprocessable Content in 41ms (Views: 10.5ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 9.8ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:55:39 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "3"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "3"], ["name", "The Hon. Pedro Purdy"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 00:55:39.418065"], ["updated_at", "2024-11-25 00:55:39.418065"]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "4"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "4"], ["name", "Rigoberto Hoeger"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 00:55:39.430528"], ["updated_at", "2024-11-25 00:55:39.430528"]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+Completed 422 Unprocessable Content in 32ms (Views: 0.5ms | ActiveRecord: 6.8ms (6 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 19:57:13 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 19:57:14 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:57:17 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "3"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+Completed 422 Unprocessable Content in 13ms (Views: 0.2ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 19:57:26 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "5"], ["name", "Fr. Amado Beahan"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 00:57:26.754170"], ["updated_at", "2024-11-25 00:57:26.754170"]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "6"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "6"], ["name", "Warren O'Conner CPA"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 00:57:26.763226"], ["updated_at", "2024-11-25 00:57:26.763226"]]
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:17:in `block in create_attendees'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 5.1ms (6 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 20:19:16 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 20:19:17 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 20:19:21 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 13ms (Views: 0.2ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 20:19:31 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "7"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "7"], ["name", "Argelia Considine"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 01:19:32.049183"], ["updated_at", "2024-11-25 01:19:32.049183"]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "8"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "8"], ["name", "Wilford Ondricka"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 01:19:32.056587"], ["updated_at", "2024-11-25 01:19:32.056587"]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.3ms (6 queries, 0 cached) | GC: 2.0ms)
+
+
+  
+NameError (undefined local variable or method `attendee' for #<AttendeesController:0x000000000201c0>):
+  
+app/controllers/attendees_controller.rb:27:in `block in create_attendees'
+app/controllers/attendees_controller.rb:15:in `create_attendees'
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 20:22:31 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 20:22:31 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 20:22:34 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "7"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "7"], ["name", "Elbert Hoeger"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 01:22:34.660829"], ["updated_at", "2024-11-25 01:22:34.660829"]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "8"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "8"], ["name", "Ava Quitzon"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 01:22:34.667193"], ["updated_at", "2024-11-25 01:22:34.667193"]]
+  ↳ app/controllers/attendees_controller.rb:19:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.8ms (6 queries, 0 cached) | GC: 6.8ms)
+
+
+  
+NameError (undefined local variable or method `tickets_array' for #<AttendeesController:0x00000000023870>):
+  
+app/controllers/attendees_controller.rb:30:in `create_attendees'
+Started GET "/docs" for 127.0.0.1 at 2024-11-24 20:24:23 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-24 20:24:24 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 20:24:27 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "7"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 15ms (Views: 0.2ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 20:25:08 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "10"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "10"], ["name", "Paul Kerluke"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 01:25:08.577065"], ["updated_at", "2024-11-25 01:25:08.577065"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "11"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "11"], ["name", "Rep. Allene Dooley"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 01:25:08.584101"], ["updated_at", "2024-11-25 01:25:08.584101"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.6ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-24 20:26:15 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "10"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 10:19:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 408ms (Views: 403.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 188.9ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 10:19:30 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 10:19:39 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "10"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 41ms (Views: 0.2ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-25 11:50:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 386ms (Views: 369.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 188.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-25 11:50:44 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 11:50:55 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "10"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 31ms (Views: 0.3ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 11:51:08 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "12"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.6ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "12"], ["name", "Trinidad Shields DO"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 16:51:08.323238"], ["updated_at", "2024-11-25 16:51:08.323238"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "13"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "13"], ["name", "Eloy Renner"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 16:51:08.336047"], ["updated_at", "2024-11-25 16:51:08.336047"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 8.8ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 12:10:09 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "12"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 422 Unprocessable Content in 8ms (Views: 0.2ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees" for 127.0.0.1 at 2024-11-25 12:10:28 -0500
+Processing by AttendeesController#create_attendees as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "14"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "14"], ["name", "Suanne Kulas DVM"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 17:10:28.428236"], ["updated_at", "2024-11-25 17:10:28.428236"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "15"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (0.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "15"], ["name", "Jama Hermiston PhD"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-25 17:10:28.435100"], ["updated_at", "2024-11-25 17:10:28.435100"]]
+  ↳ app/controllers/attendees_controller.rb:20:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendees_controller.rb:15:in `create_attendees'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 7.2ms (6 queries, 0 cached) | GC: 1.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","user_id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","user_id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241126113810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-26 06:42:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 247ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 67.1ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 06:42:50 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-26 06:42:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 06:42:51 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 76ms (Views: 0.2ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2024-11-26 06:43:07 -0500
+Processing by AttendeesController#index as JSON
+  [1m[36mUserAttendee Load (0.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:43:in `index'
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 06:44:21 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 06:44:21 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2024-11-26 06:44:23 -0500
+Processing by AttendeesController#index as JSON
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:43:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2024-11-26 06:45:11 -0500
+Processing by AttendeesController#index as JSON
+  [1m[36mUserAttendee Load (0.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:43:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2024-11-26 06:52:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#index as JSON
+  [1m[36mUserAttendee Load (0.7ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:43:in `index'
+Completed 200 OK in 39ms (Views: 2.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 18.4ms)
+
+
+  [1m[36mUserAttendee Load (2.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Delete All (3.9ms)[0m  [1m[31mDELETE FROM "user_attendees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (3.6ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-26 11:53:50.413796"], ["updated_at", "2024-11-26 11:53:50.413796"], ["event_id", 101]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-26 11:53:50.488892"], ["updated_at", "2024-11-26 11:53:50.488892"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.5ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-26 11:53:50.493712"], ["updated_at", "2024-11-26 11:53:50.493712"], ["event_id", 103]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 1], ["created_at", "2024-11-26 11:53:50.497933"], ["updated_at", "2024-11-26 11:53:50.497933"], ["event_id", 104]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 11:53:50.501208"], ["updated_at", "2024-11-26 11:53:50.501208"], ["event_id", 105]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserAttendee Load (1.7ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 06:54:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 326ms (Views: 311.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 125.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 06:54:19 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 1.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2024-11-26 06:54:23 -0500
+Processing by AttendeesController#index as JSON
+  [1m[36mUserAttendee Load (0.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:43:in `index'
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-26 11:24:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 257ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 100.3ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:24:54 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:24:55 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:27:01 -0500
+  
+ArgumentError (Invalid route name, already in use: 'rails_health_check' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:23:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:27:17 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:27:17 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:27:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 347ms (Views: 328.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 154.2ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:27:37 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:27:38 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:27:39 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:28:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 344ms (Views: 324.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 150.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:28:28 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:28:29 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:28:29 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:29:15 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-26 11:29:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:29:15 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:29:17 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:29:17 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:29:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 346ms (Views: 319.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 149.8ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:29:28 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:29:30 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:29:30 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:29:39 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:29:40 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:29:40 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:29:41 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 12.5ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:30:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 341ms (Views: 321.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 148.9ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:30:59 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 49ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:31:00 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:31:01 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:31:02 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:31:02 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:31:05 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:31:05 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:33:46 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:33:47 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 11:35:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 360ms (Views: 341.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 157.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 11:35:40 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 58ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:35:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 314ms (Views: 302.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 107.2ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:35:15 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 69ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:35:19 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:35:19 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:46:44 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:46:47 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:47:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 352ms (Views: 337.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 151.8ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:47:19 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:47:21 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:47:21 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:48:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 344ms (Views: 329.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 151.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:48:16 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:48:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 345ms (Views: 327.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 153.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:48:44 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:49:23 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:49:23 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:49:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 305ms (Views: 286.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 112.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:49:32 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 41ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:58:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 357ms (Views: 339.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 155.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:58:08 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 46ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 13:58:17 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 13:58:17 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 14:01:18 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 14:01:19 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 14:01:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 361ms (Views: 342.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 159.3ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 14:01:40 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 14:07:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 349ms (Views: 329.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 152.8ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 14:07:24 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-26 16:38:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 322ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 101.1ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 16:38:09 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 16:38:10 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 16:38:20 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant AttendeesController::Atteendee):
+  
+app/controllers/attendees_controller.rb:44:in `logs'
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 16:41:41 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 16:41:42 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 16:41:47 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+Completed 404 Not Found in 19ms (Views: 0.2ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Delete All (2.4ms)[0m  [1m[31mDELETE FROM "user_attendees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.5ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-26 21:52:49.260790"], ["updated_at", "2024-11-26 21:52:49.260790"], ["event_id", 101]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (4.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-26 21:52:49.266322"], ["updated_at", "2024-11-26 21:52:49.266322"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.4ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-26 21:52:49.343085"], ["updated_at", "2024-11-26 21:52:49.343085"], ["event_id", 103]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 1], ["created_at", "2024-11-26 21:52:49.348062"], ["updated_at", "2024-11-26 21:52:49.348062"], ["event_id", 104]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:52:49.355169"], ["updated_at", "2024-11-26 21:52:49.355169"], ["event_id", 105]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Delete All (1.7ms)[0m  [1m[31mDELETE FROM "user_attendees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-26 21:54:09.770943"], ["updated_at", "2024-11-26 21:54:09.770943"], ["event_id", 101]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (5.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-26 21:54:09.775614"], ["updated_at", "2024-11-26 21:54:09.775614"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-26 21:54:09.827262"], ["updated_at", "2024-11-26 21:54:09.827262"], ["event_id", 103]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (2.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 1], ["created_at", "2024-11-26 21:54:09.830999"], ["updated_at", "2024-11-26 21:54:09.830999"], ["event_id", 104]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:54:09.835364"], ["updated_at", "2024-11-26 21:54:09.835364"], ["event_id", 105]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Delete All (1.9ms)[0m  [1m[31mDELETE FROM "user_attendees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-26 21:55:21.249713"], ["updated_at", "2024-11-26 21:55:21.249713"], ["event_id", 101]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (2.7ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-26 21:55:21.254302"], ["updated_at", "2024-11-26 21:55:21.254302"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-26 21:55:21.305112"], ["updated_at", "2024-11-26 21:55:21.305112"], ["event_id", 103]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 1], ["created_at", "2024-11-26 21:55:21.308813"], ["updated_at", "2024-11-26 21:55:21.308813"], ["event_id", 104]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.8ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:55:21.313227"], ["updated_at", "2024-11-26 21:55:21.313227"], ["event_id", 105]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.5ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:55:21.317402"], ["updated_at", "2024-11-26 21:55:21.317402"], ["event_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET1"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 21], ["ticket_id", "TICKET1"], ["name", "Lita Runte"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-26 21:55:21.564623"], ["updated_at", "2024-11-26 21:55:21.564623"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET2"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 21], ["ticket_id", "TICKET2"], ["name", "Geoffrey Stehr"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-26 21:55:21.571773"], ["updated_at", "2024-11-26 21:55:21.571773"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET3"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 21], ["ticket_id", "TICKET3"], ["name", "Amalia Botsford"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-26 21:55:21.578573"], ["updated_at", "2024-11-26 21:55:21.578573"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET4"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 21], ["ticket_id", "TICKET4"], ["name", "Sang Daniel Ret."], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-26 21:55:21.585399"], ["updated_at", "2024-11-26 21:55:21.585399"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET5"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 21], ["ticket_id", "TICKET5"], ["name", "Hildegard Ortiz"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-26 21:55:21.592172"], ["updated_at", "2024-11-26 21:55:21.592172"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Delete All (1.9ms)[0m  [1m[31mDELETE FROM "user_attendees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-26 21:55:51.681926"], ["updated_at", "2024-11-26 21:55:51.681926"], ["event_id", 101]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (4.4ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-26 21:55:51.687488"], ["updated_at", "2024-11-26 21:55:51.687488"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-26 21:55:51.759014"], ["updated_at", "2024-11-26 21:55:51.759014"], ["event_id", 103]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 1], ["created_at", "2024-11-26 21:55:51.762371"], ["updated_at", "2024-11-26 21:55:51.762371"], ["event_id", 104]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:55:51.767144"], ["updated_at", "2024-11-26 21:55:51.767144"], ["event_id", 105]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.5ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:55:51.771238"], ["updated_at", "2024-11-26 21:55:51.771238"], ["event_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET1"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Delete All (1.9ms)[0m  [1m[31mDELETE FROM "user_attendees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-26 21:56:22.404628"], ["updated_at", "2024-11-26 21:56:22.404628"], ["event_id", 101]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (3.6ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-26 21:56:22.409384"], ["updated_at", "2024-11-26 21:56:22.409384"], ["event_id", 102]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-26 21:56:22.461082"], ["updated_at", "2024-11-26 21:56:22.461082"], ["event_id", 103]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 1], ["created_at", "2024-11-26 21:56:22.464854"], ["updated_at", "2024-11-26 21:56:22.464854"], ["event_id", 104]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (2.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:56:22.469194"], ["updated_at", "2024-11-26 21:56:22.469194"], ["event_id", 105]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserAttendee Create (1.6ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-26 21:56:22.473683"], ["updated_at", "2024-11-26 21:56:22.473683"], ["event_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET55"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 33], ["ticket_id", "TICKET55"], ["name", "Reynaldo Lockman"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-26 21:56:22.721054"], ["updated_at", "2024-11-26 21:56:22.721054"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET56"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 33], ["ticket_id", "TICKET56"], ["name", "Rev. Louisa Veum"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-26 21:56:22.728544"], ["updated_at", "2024-11-26 21:56:22.728544"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET57"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 33], ["ticket_id", "TICKET57"], ["name", "Brett Harris"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-26 21:56:22.735654"], ["updated_at", "2024-11-26 21:56:22.735654"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET58"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 33], ["ticket_id", "TICKET58"], ["name", "Tammi Wintheiser"], ["email", "[FILTERED]"], ["status", 1], ["created_at", "2024-11-26 21:56:22.742505"], ["updated_at", "2024-11-26 21:56:22.742505"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = ? LIMIT ?[0m  [["ticket_id", "TICKET59"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (0.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_attendee_id", 33], ["ticket_id", "TICKET59"], ["name", "Mrs. Preston Thompson"], ["email", "[FILTERED]"], ["status", 0], ["created_at", "2024-11-26 21:56:22.749263"], ["updated_at", "2024-11-26 21:56:22.749263"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.2ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 20], ["description", "Log 1 para el Attendee 20"], ["created_at", "2024-11-26 21:56:22.759390"], ["updated_at", "2024-11-26 21:56:22.759390"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 20], ["description", "Log 2 para el Attendee 20"], ["created_at", "2024-11-26 21:56:22.763165"], ["updated_at", "2024-11-26 21:56:22.763165"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.0ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 21], ["description", "Log 1 para el Attendee 21"], ["created_at", "2024-11-26 21:56:22.766622"], ["updated_at", "2024-11-26 21:56:22.766622"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 21], ["description", "Log 2 para el Attendee 21"], ["created_at", "2024-11-26 21:56:22.769900"], ["updated_at", "2024-11-26 21:56:22.769900"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.0ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 22], ["description", "Log 1 para el Attendee 22"], ["created_at", "2024-11-26 21:56:22.773198"], ["updated_at", "2024-11-26 21:56:22.773198"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (9.5ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 22], ["description", "Log 2 para el Attendee 22"], ["created_at", "2024-11-26 21:56:22.776380"], ["updated_at", "2024-11-26 21:56:22.776380"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.0ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 23], ["description", "Log 1 para el Attendee 23"], ["created_at", "2024-11-26 21:56:22.788405"], ["updated_at", "2024-11-26 21:56:22.788405"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 23], ["description", "Log 2 para el Attendee 23"], ["created_at", "2024-11-26 21:56:22.792681"], ["updated_at", "2024-11-26 21:56:22.792681"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (2.2ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 24], ["description", "Log 1 para el Attendee 24"], ["created_at", "2024-11-26 21:56:22.796069"], ["updated_at", "2024-11-26 21:56:22.796069"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendeeLog Create (1.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["attendee_id", 24], ["description", "Log 2 para el Attendee 24"], ["created_at", "2024-11-26 21:56:22.800654"], ["updated_at", "2024-11-26 21:56:22.800654"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 16:56:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 337ms (Views: 318.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 151.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 16:56:41 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 63ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 16:56:49 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+Completed 404 Not Found in 19ms (Views: 0.2ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mAttendee Load (2.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 16:58:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 352ms (Views: 335.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 157.2ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 16:58:35 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 16:58:39 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+Completed 404 Not Found in 18ms (Views: 0.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 16:59:58 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+Completed 404 Not Found in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:00:42 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+Completed 404 Not Found in 10ms (Views: 0.3ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:00:59 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+Completed 404 Not Found in 9ms (Views: 0.2ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:13:04 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:46:in `logs'
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:13:07 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"attendee_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:46:in `logs'
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 17:16:56 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 17:16:56 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 17:17:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 351ms (Views: 335.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 152.3ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-26 17:17:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 17:17:41 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.0ms)
+
+
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:17:46 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:46:in `logs'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+  
+NameError (uninitialized constant AttendeesController::Log):
+  
+app/controllers/attendees_controller.rb:52:in `logs'
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:18:33 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+  [1m[36mAttendeeLog Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? LIMIT ?[0m  [["attendee_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:51:in `logs'
+Completed 404 Not Found in 19ms (Views: 0.2ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-26 17:18:37 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-26 17:18:37 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/attendees//logs" for 127.0.0.1 at 2024-11-26 17:18:39 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for AttendeesController):
+  
+actionpack (7.2.2) lib/abstract_controller/base.rb:158:in `process'
+actionpack (7.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+activerecord (7.2.2) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.2.2) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/attendees/1/logs" for 127.0.0.1 at 2024-11-26 17:18:47 -0500
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+  [1m[36mAttendeeLog Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? LIMIT ?[0m  [["attendee_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:51:in `logs'
+Completed 404 Not Found in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+  [1m[36mAttendeeLog Load (1.7ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/attendees/20/logs" for 127.0.0.1 at 2024-11-26 17:19:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#logs as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:44:in `logs'
+  [1m[36mAttendeeLog Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ? LIMIT ?[0m  [["attendee_id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:51:in `logs'
+  [1m[36mAttendeeLog Load (0.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = ?[0m  [["attendee_id", 20]]
+  ↳ app/controllers/attendees_controller.rb:52:in `logs'
+Completed 200 OK in 110ms (Views: 5.3ms | ActiveRecord: 3.1ms (3 queries, 0 cached) | GC: 68.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-27 09:35:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 401ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 166.6ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 09:35:34 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 09:35:34 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 09:36:55 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 09:36:56 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 09:36:57 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 09:36:57 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 09:38:15 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.0ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 09:38:15 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-27 09:38:19 -0500
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 09:39:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 311ms (Views: 284.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 123.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 09:39:10 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 63ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mUserAttendee Load (3.6ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 09:48:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 354ms (Views: 339.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 157.9ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 09:48:16 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 75ms (Views: 0.1ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/user_attendees/show_user_attendees" for 127.0.0.1 at 2024-11-27 09:48:28 -0500
+Processing by UserAttendeesController#show_user_attendees as JSON
+  [1m[36mUserAttendee Load (0.3ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/user_attendees_controller.rb:4:in `show_user_attendees'
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
