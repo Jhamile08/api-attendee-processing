@@ -1,6 +1,5 @@
 class Attendee < ApplicationRecord
   # Relaciones
-  belongs_to :user_attendee
   has_many :attendee_logs, dependent: :destroy
 
   # Validaciones

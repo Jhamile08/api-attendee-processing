@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+UserAttendee.delete_all
+
+# Agregar datos a la tabla user_attendees
+UserAttendee.create!([
+                       { event_id: 101, quantity_tickets: 2 },
+                       { event_id: 102, quantity_tickets: 4 },
+                       { event_id: 103, quantity_tickets: 3 },
+                       { event_id: 104, quantity_tickets: 1 },
+                       { event_id: 105, quantity_tickets: 5 }
+                     ])
