@@ -2999,3 +2999,780 @@ Processing by AttendeesController#summary as JSON
 Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
 
 
+Started GET "/events/1/attendees/summary?size=2&page=4" for 127.0.0.1 at 2024-11-27 08:45:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"4", "event_id"=>"1"}
+  [1m[36mAttendee Load (2.0ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 200 OK in 45ms (Views: 0.6ms | ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 4.7ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:52:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 5.4ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:53:39 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (3.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:53:59 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.0ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:54:15 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:54:26 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:54:27 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:56:04 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (4.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 6.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:56:06 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 08:56:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 08:56:51 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AttendeesPaginateShow
+Completed 200 OK in 179ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 92.1ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:56:57 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (3.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 5.2ms (1 query, 0 cached) | GC: 5.6ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 08:57:03 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:57:34 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:58:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 4.6ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:58:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 08:59:43 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:116:in `%'
+app/controllers/attendees_controller.rb:116:in `block in summary'
+app/controllers/attendees_controller.rb:91:in `each'
+app/controllers/attendees_controller.rb:91:in `each_with_index'
+app/controllers/attendees_controller.rb:91:in `summary'
+Started GET "/docs" for 127.0.0.1 at 2024-11-27 08:59:59 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-27 08:59:59 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Error building schema: uninitialized constant AttendeesPaginateShow
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events//attendees/summary" for 127.0.0.1 at 2024-11-27 09:00:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/attendees/summary"):
+  
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:00:07 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (1.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:54:in `summary'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.6ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:117:in `%'
+app/controllers/attendees_controller.rb:117:in `block in summary'
+app/controllers/attendees_controller.rb:92:in `each'
+app/controllers/attendees_controller.rb:92:in `each_with_index'
+app/controllers/attendees_controller.rb:92:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:02:05 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (5.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:02:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary?size=2&page=3" for 127.0.0.1 at 2024-11-27 09:02:20 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"3", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:03:26 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (3.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:03:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (2.0ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 5.5ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:06:29 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary?size=5&page=1" for 127.0.0.1 at 2024-11-27 09:06:39 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"5", "page"=>"1", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary?size=5&page=1" for 127.0.0.1 at 2024-11-27 09:06:43 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"5", "page"=>"1", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary?size=1&page=5" for 127.0.0.1 at 2024-11-27 09:07:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"1", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 44ms (Views: 0.5ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 3.9ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 09:07:17 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:07:25 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 09:07:38 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 09:08:44 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:09:12 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:11:23 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary" for 127.0.0.1 at 2024-11-27 09:11:55 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/attendees_controller.rb:121:in `%'
+app/controllers/attendees_controller.rb:121:in `block in summary'
+app/controllers/attendees_controller.rb:96:in `each'
+app/controllers/attendees_controller.rb:96:in `each_with_index'
+app/controllers/attendees_controller.rb:96:in `summary'
+Started GET "/events/1/attendees/summary?size=1&page=5" for 127.0.0.1 at 2024-11-27 09:12:12 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"1", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=4&page=3" for 127.0.0.1 at 2024-11-27 09:12:29 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"4", "page"=>"3", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:22:37 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:149: else without rescue is useless
+      else
+      ^~~~
+):
+  
+app/controllers/attendees_controller.rb:149: else without rescue is useless
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:23:01 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:173: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:173: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:23:54 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:160: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:160: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:25:24 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:159: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:159: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:25:36 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:26:07 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:28:27 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:29:35 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (2.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 35ms (Views: 1.1ms | ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:34:25 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 21ms (Views: 1.6ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:36:00 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (4.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 32ms (Views: 0.8ms | ActiveRecord: 5.8ms (1 query, 0 cached) | GC: 5.2ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:37:09 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (4.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 35ms (Views: 0.9ms | ActiveRecord: 6.5ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:39:53 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (2.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 33ms (Views: 0.9ms | ActiveRecord: 5.8ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:41:07 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:44:02 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 22ms (Views: 1.6ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:44:22 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:45:03 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:45:13 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 3.1ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:45:51 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.0ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 23ms (Views: 0.8ms | ActiveRecord: 7.5ms (1 query, 0 cached) | GC: 4.6ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:46:08 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (3.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 4.4ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:46:18 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=5" for 127.0.0.1 at 2024-11-27 09:47:46 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (3.5ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 21ms (Views: 1.7ms | ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:47:54 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:51:17 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=5" for 127.0.0.1 at 2024-11-27 09:51:43 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"5", "event_id"=>"1"}
+  [1m[36mAttendee Load (2.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 3.0ms (1 query, 0 cached) | GC: 9.3ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 09:51:53 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 09:52:40 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.4ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=2" for 127.0.0.1 at 2024-11-27 09:52:55 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=3" for 127.0.0.1 at 2024-11-27 09:53:06 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"3", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/events/1/attendees/summary?size=2&page=3" for 127.0.0.1 at 2024-11-27 09:53:57 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"2", "page"=>"3", "event_id"=>"1"}
+  [1m[36mAttendee Load (0.9ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:58:in `summary'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/api/v1/events/4" for 127.0.0.1 at 2024-11-27 11:06:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/4"):
+  
+Started GET "/api/v1/events/5" for 127.0.0.1 at 2024-11-27 11:06:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/5"):
+  
+Started GET "/api/v1/events/1" for 127.0.0.1 at 2024-11-27 11:06:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/1"):
+  
+Started GET "/api/v1/events/2" for 127.0.0.1 at 2024-11-27 11:06:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/2"):
+  
+Started GET "/api/v1/events/3" for 127.0.0.1 at 2024-11-27 11:06:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/3"):
+  
+Started GET "/api/v1/events/4" for 127.0.0.1 at 2024-11-27 11:07:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/4"):
+  
+Started GET "/api/v1/events/4" for 127.0.0.1 at 2024-11-27 11:08:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/4"):
+  
+Started GET "/api/v1/events/5" for 127.0.0.1 at 2024-11-27 11:08:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/5"):
+  
+Started POST "/events" for 127.0.0.1 at 2024-11-27 11:08:28 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/events"):
+  
+Started GET "/api/v1/events/4" for 127.0.0.1 at 2024-11-27 11:10:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/4"):
+  
+Started GET "/api/v1/events/4" for 127.0.0.1 at 2024-11-27 11:10:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/events/4"):
+  

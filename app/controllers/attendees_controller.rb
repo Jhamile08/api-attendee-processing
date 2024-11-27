@@ -9,10 +9,15 @@ class AttendeesController < ApplicationController
     #params[:event_id] returns the id of the event sent in the URL
     #
     # Params for pagination
-    @size = params[:size] || 5
-    @page = params[:page] || 1
+    if params[:size] == nil
+      @size = 5
+    end
 
-    puts "THIS IS SIZE: #{params[:size].class} and this is page #{params[:page].class}"
+    if params[:page] == nil
+      @page = 1
+    end
+
+    puts "THIS IS SIZE: #{@size} and this is page #{@page}"
 
     #when send page and size convert to string
     
@@ -110,7 +115,7 @@ class AttendeesController < ApplicationController
             puts "pageNumber #{pageNumber}"
             attendees_paginate_show << pageNumber
           else
-            attendees_paginate << attendee
+          
             if  page_count == (@page -1)
               
               if (@page*@size - (index+1)) % new_page == 0
@@ -124,6 +129,20 @@ class AttendeesController < ApplicationController
                 attendees_paginate_show << pageNumber
               end
             end
+            # if ((@page*@size) > all_attendees_for_event.size) && ((@page*@size) -all_attendees_for_event.size) > @size
+            #   if ((all_attendees_for_event.size/@size).to_i == (page_count+1))
+            #     page_num = "page" + (page_count + 1).to_s
+            
+            #     pageNumber = {
+            #       page_num => {
+            #         attendees: attendees_paginate
+            #       }
+            #     }
+            #     attendees_paginate_show << pageNumber
+            #   end
+            # end
+
+            attendees_paginate << attendee
           end
         
       else
