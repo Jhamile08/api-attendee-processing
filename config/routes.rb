@@ -16,8 +16,19 @@ Rails.application.routes.draw do
 
   #  PATCH /attendees/:attendee_id/confirm, /attendees/:attendee_id/cancel, GET /attendees/:attendee_id/logs`
   # resources :attendees do
-  #   resources :confirm, :cancel, :log
+  #   patch :confirm, :cancel
+  #   get :"logs"
   # end
+  resources :attendees do
+    member do  # Member block the routes for individual attendees (using :id)
+      patch :confirm
+      patch :cancel
+      get :logs
+      # get :log
+    end
+  end
+  
+  
 
   #  GET /events/:event_id/attendees/summary
   #  get '/events/:event_id/attendees/summary' => 'attendees#summary', as: :rails_health_check
@@ -25,9 +36,9 @@ Rails.application.routes.draw do
 
   #GET /attendees/:attendee_id/logs
  # get 'attendees/:attendee_id/logs', to: 'attendees#logs', as: 'attendee_logs'
-  resources :attendees do
-    member do
-      get :"logs"
-    end
-  end
+  # resources :attendees do
+  #   member do
+  #     get :"logs"
+  #   end
+  # end
 end
