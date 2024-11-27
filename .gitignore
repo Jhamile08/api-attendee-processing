@@ -1,8 +1,9 @@
-<<<<<<< HEAD
-tmp/cache/
-=======
 log/development.log
 storage/development.sqlite3
+ storage/development.sqlite3-shm
+storage/development.sqlite3-wal 
 tmp/cache/bootsnap/load-path-cache
 tmp/local_secret.txt
->>>>>>> develop
+tmp/cache/bootsnap/*
+db/seeds.rb
+
