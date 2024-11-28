@@ -8452,3 +8452,6 @@ Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-28 12:31:02 -0500
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, and [36mSENDGRID_DOMAIN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
