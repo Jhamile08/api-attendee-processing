@@ -41,14 +41,7 @@ class AttendeesController < ApplicationController
 
     tickets = {
       'tickets' => [
-        { id: 1, event_id:  1 },
-        { id: 2, event_id:  1 },
-        { id: 3, event_id:  1 },
-        { id: 4, event_id:  1 },
-        { id: 5, event_id:  2 },
-        { id: 6, event_id:  2 },
-        { id: 7, event_id:  2 },
-        { id: 8, event_id:  2 }
+        { id: 1, event_id: 1 }
       ]
     }
 
@@ -121,8 +114,7 @@ class AttendeesController < ApplicationController
     # tickets = ticket_service.fetch_tickets
     tickets = {
       'tickets' => [
-        { 'id' => 14 },
-        { 'id' => 15 }
+        { 'id' => 14 }
       ]
     }
     begin
@@ -134,11 +126,11 @@ class AttendeesController < ApplicationController
           attendee = Attendee.create!(
             user_attendee_id: 1,
             name: Faker::Name.name,
-            email: Faker::Internet.email,
+            email: 'jhamiledr222@gmail.com',
             ticket_id: ticket['id'],
             status: false
           )
-          # AttendeeMailer.confirmation_email(attendee).deliver_later
+          AttendeeMailer.confirmation_email(attendee).deliver_later
           created_attendees << attendee
         end
 
@@ -149,6 +141,17 @@ class AttendeesController < ApplicationController
       end
     rescue ActiveRecord::RecordInvalid => e
       render json: { error: e.message }, status: :unprocessable_entity
+    end
+  end
+
+  def confirm
+    @attendee = Attendee.find(params[:id])
+
+    if @attendee.update(status: true)
+      # Renderizar el mensaje directamente en la misma página
+      render plain: 'La asistencia ha sido confirmada correctamente.', status: :ok
+    else
+      render plain: 'Hubo un error al confirmar la asistencia.', status: :unprocessable_entity
     end
   end
 end

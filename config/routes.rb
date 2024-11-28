@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :attendees do
     member do
-      patch :confirm
+      get :confirm
       patch :cancel
       get :logs
     end

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Confirmación de asistencia</title>
+  </head>
+  <body>
+    <p>Hola <%= @attendee.name %>,</p>
+    <p>Por favor, confirma tu asistencia haciendo clic en el siguiente enlace:</p>
+    <p>
+      <a href="<%= @confirmation_link %>">Confirmar asistencia</a>
+    </p>
+  </body>
+</html>
