@@ -81,14 +81,18 @@ class AttendeesController < ApplicationController
 
 
     page_count = 0
-    puts "HWYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+
+    #Organize pagination
+    if all_attendees_for_event.size % @size != 0
+      #this is when the last page is not multiple of size
+      new_page = all_attendees_for_event.size % @size
+    end
+
     all_attendees_for_event.each_with_index do |attendee, index|
-      puts "entro al ciclo"
-      puts "size #{@size*@page}"
-      puts "index #{index}"
+      
+
       if index < (@size*@page)
-        puts "SIIIIIIIIIIIIIIIIIII"
-        if true
+        
           if ((index+1) % @size) == 0
             attendees_paginate << attendee
             puts "Seteo"
@@ -107,9 +111,6 @@ class AttendeesController < ApplicationController
           else
             attendees_paginate << attendee
           end
-        else
-          attendees_paginate << attendee
-        end
       else
         break;
       end

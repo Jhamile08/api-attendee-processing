@@ -2562,3 +2562,32 @@ Processing by AttendeesController#summary as JSON
 Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 21:59:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:135: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:135: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 22:00:20 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:135: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:135: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 22:00:48 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:139: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:139: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 22:00:49 -0500
+  
+SyntaxError (/home/santiago/Documents/Rails/Semana3/api-attendee-processing/app/controllers/attendees_controller.rb:139: syntax error, unexpected end-of-input):
+  
+app/controllers/attendees_controller.rb:139: syntax error, unexpected end-of-input
+Started GET "/events/1/attendees/summary?size=3&page=2" for 127.0.0.1 at 2024-11-27 22:01:31 -0500
+Processing by AttendeesController#summary as JSON
+  Parameters: {"size"=>"3", "page"=>"2", "event_id"=>"1"}
+  [1m[36mAttendee Load (1.5ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:53:in `summary'
+Completed 200 OK in 42ms (Views: 0.4ms | ActiveRecord: 3.4ms (1 query, 0 cached) | GC: 1.9ms)
+
+
