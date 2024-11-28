@@ -88,8 +88,14 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (3.1.4)
+    dotenv-rails (3.1.4)
+      dotenv (= 3.1.4)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -242,6 +248,8 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  dotenv-rails
+  faker
   oas_rails
   puma (>= 5.0)
   rack-cors
