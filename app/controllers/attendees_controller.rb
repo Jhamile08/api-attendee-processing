@@ -2,29 +2,11 @@ class AttendeesController < ApplicationController
   # @summary Returns a list of Attendees.
   #
   # @parameter size(query) [Integer]  Used for pagination of response data (default: 5 items per response).
-  # @parameter page(query) [Integer]   choose the numer of pages you want to see
+  # @parameter page(query) [Integer]   choose the number of pages you want to see
   def summary
-    # params[:event_id] returns the id of the event sent in the URL
-    #
     # Params for pagination
-    @size = 5 if params[:size].nil?
-
-    @page = 1 if params[:page].nil?
-
-    puts "THIS IS SIZE: #{@size} and this is page #{@page}"
-
-    # when send page and size convert to string
-
-    @size = params[:size].to_i unless params[:size].nil?
-
-    @page = params[:page].to_i unless params[:page].nil?
-
-    # with this consult we will find the attendee rules that belongs to that specify event and with the attendee_rules filtered
-    # now he have the attendee_rule where we can get  the user_attendee_id for filter by user_attendee_id that belongs to that specific event
-    @attendees = Attendee.all
-
-    # now we have to collect all the attendees to the event cause we are finding attendies separectly by user_attendee_id
-    all_attendees_for_event = []
+    @size = params[:size].nil? ? 5 : params[:size].to_i
+    @page = params[:page].nil? ? 1 : params[:page].to_i
 
     # Simulating tickets
     tickets = {
@@ -40,107 +22,65 @@ class AttendeesController < ApplicationController
       ]
     }
 
+    # Get all attendees
+    @attendees = Attendee.all
+    all_attendees_for_event = []
     true_attendees = 0
     false_attendees = 0
 
+    # Filtering attendees based on the event_id and ticket_id
     @attendees.each do |attendee|
-      puts attendee
       tickets['tickets'].each do |ticket|
-        puts "Este es el tiquete de base de datos #{attendee.ticket_id.to_i.class}"
-        puts "Este es el tiquete de json #{ticket[:id].class}"
         next unless attendee.ticket_id.to_i == ticket[:id]
-
-        puts 'Entro al padre'
+        
         if params[:event_id].to_i == ticket[:event_id]
-          puts 'EVENTO SIMILARES'
           all_attendees_for_event << attendee
           if attendee.status
             true_attendees += 1
           else
             false_attendees += 1
           end
-        else
-          puts 'NO ENTRO'
         end
       end
     end
 
-    # pagination
-    #
-    attendees_paginate = []
-    attendees_paginate_show = []
+    # Calculate pagination
+    items = all_attendees_for_event
 
-    page_count = 0
+    # Get the `size` (records per page) and `pages` (number of pages to show) from params
+    items_per_page = @size # Default to 2 if not provided
+    total_pages_to_show = p@page  # Default to 1 page if not provided
 
-    # Organize pagination
-    if all_attendees_for_event.size % @size != 0
-      # this is when the last page is not multiple of size
-      new_page = all_attendees_for_event.size % @size
+    # Prepare an array to store the requested paginated pages
+    paginated_pages = []
+
+    # Manually paginate the array (using Ruby array slicing)
+    (1..total_pages_to_show).each do |page_number|
+      # Calculate the start and end indexes for the current page
+      start_index = (page_number - 1) * items_per_page
+      end_index = start_index + items_per_page - 1
+      
+      # Slice the array to get the items for the current page
+      page_items = items[start_index..end_index]
+
+      # If no items for the current page, break the loop early
+      break if page_items.nil? || page_items.empty?
+
+      paginated_pages << {
+        page: page_number,
+        items: page_items
+      }
     end
 
-    all_attendees_for_event.each_with_index do |attendee, index|
-      break unless index < (@size * @page)
-
-      if ((index + 1) % @size) == 0 && @page != page_count
-        attendees_paginate << attendee
-
-        page_count += 1
-
-        page_num = 'page' + ((index + 1) / @size).to_s
-
-        pageNumber = {
-          page_num => {
-            attendees: attendees_paginate
-          }
-        }
-        attendees_paginate = []
-
-        puts "pageNumber #{pageNumber}"
-        attendees_paginate_show << pageNumber
-      else
-
-        if page_count == (@page - 1) && (@page * @size - (index + 1)) % new_page == (0)
-          page_num = 'page' + @page.to_s
-
-          pageNumber = {
-            page_num => {
-              attendees: attendees_paginate
-            }
-          }
-          attendees_paginate_show << pageNumber
-        end
-        # if ((@page*@size) > all_attendees_for_event.size) && ((@page*@size) -all_attendees_for_event.size) > @size
-        #   if ((all_attendees_for_event.size/@size).to_i == (page_count+1))
-        #     page_num = "page" + (page_count + 1).to_s
-
-        #     pageNumber = {
-        #       page_num => {
-        #         attendees: attendees_paginate
-        #       }
-        #     }
-        #     attendees_paginate_show << pageNumber
-        #   end
-        # end
-
-        attendees_paginate << attendee
-      end
-    end
-
-    puts "Number of attendees that will come: #{true_attendees}"
-    puts "Number of attendees that will not come: #{false_attendees}"
-
-    # FOR THE MOMENT THE CAPACITY AVAILABLE FOR EVENT WILL BE SET BY HERE, BUT IN THE EVENT ENTITY IT SHOULD BE THE CAPACITY OF THE EVENT
-    event_capacity = 100
-
-    total_registered = true_attendees + false_attendees
-    puts "Total registered attendees: #{total_registered} and the rest of capacity available is: #{event_capacity - total_registered}"
-
-    # generating the hash to be included
-    all_attendees_for_event << { event_capacity: event_capacity,
-                                 attendants: true_attendees,
-                                 non_attendants: false_attendees,
-                                 tickets_not_sold: (event_capacity - total_registered) }
-
-    render json: attendees_paginate_show
+    # Render the response with paginated pages and metadata
+    render json: {
+      pages: paginated_pages,
+      meta: {
+        total_pages: (items.size / items_per_page.to_f).ceil,  # Total number of pages for all records
+        total_count: items.size,  # Total number of records
+        current_page: @page,  # Current page
+        per_page: items_per_page  # Number of records per page
+      }
+    }
   end
 end
