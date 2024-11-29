@@ -42,7 +42,7 @@ OasRails.configure do |config|
   config.info.contact.url = 'https://a-chacon.com'
 
   # Servers Information. For more details follow: https://spec.openapis.org/oas/latest.html#server-object
-  config.servers = [{ url: 'URL_Aplication_remote', description: 'Remote' }, { url: 'http://localhost:3000', description: 'Local' }]
+  config.servers = [{ url: 'URL_Aplication_remote', description: 'production' }, { url: 'http://localhost:3000', description: 'Local' }]
 
   # Tag Information. For more details follow: https://spec.openapis.org/oas/latest.html#tag-object
   config.tags = [{ name: "Attendees", description: "Manage the attendees api" }]
