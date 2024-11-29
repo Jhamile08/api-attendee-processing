@@ -10103,3 +10103,284 @@ Processing by UserAttendeesController#show_user_attendees as JSON
 Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE DATABASE "storage/development"."sqlite3" ENCODING = 'unicode'[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (84.6ms)[0m  [1m[35mCREATE DATABASE "mydatabase" ENCODING = 'unicode'[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (106.0ms)[0m  [1m[35mCREATE DATABASE "attendees" ENCODING = 'unicode'[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (104.4ms)[0m  [1m[35mCREATE DATABASE "attendees" ENCODING = 'unicode'[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (5796.8ms)[0m  [1m[35mCREATE DATABASE "attendees" ENCODING = 'unicode'[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (4904.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "attendees"[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (5884.4ms)[0m  [1m[35mCREATE DATABASE "attendees" ENCODING = 'unicode'[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (315.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (306.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (293.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6917383988083273425)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (607.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (301.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (197.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-29 12:03:23.116332', '2024-11-29 12:03:23.116336') RETURNING "key"[0m
+Migrating to CreateUserAttendees (20241121182420)
+  [1m[36mTRANSACTION (394.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (802.6ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" bigserial primary key, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (304.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (211.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendees (20241121182519)
+  [1m[36mTRANSACTION (300.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (496.6ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" bigserial primary key, "user_attendee_id" integer, "ticket_id" character varying, "name" character varying, "email" character varying, "status" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (501.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182519') RETURNING "version"[0m
+  [1m[36mTRANSACTION (207.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendeeRules (20241121182535)
+  [1m[36mTRANSACTION (513.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (845.8ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" bigserial primary key, "user_attendee_id" integer, "event_id" integer, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (489.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182535') RETURNING "version"[0m
+  [1m[36mTRANSACTION (202.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendeeLogs (20241121182547)
+  [1m[36mTRANSACTION (283.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (598.3ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" bigserial primary key, "attendee_id" bigint NOT NULL, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (307.1ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (293.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182547') RETURNING "version"[0m
+  [1m[36mTRANSACTION (306.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (154.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (607.8ms)[0m  [1m[35mALTER TABLE "user_attendees" DROP COLUMN "user_id"[0m
+  [1m[35m (609.8ms)[0m  [1m[35mALTER TABLE "user_attendees" ADD "event_id" integer NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (308.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241126113810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (299.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (401.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6917383988083273425)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (406.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-11-29 07:04:06 -0500
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 07:04:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (295.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 451ms (Views: 436.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 71.0ms)
+
+
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 405ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 50.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 07:04:14 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 6899ms (Views: 0.1ms | ActiveRecord: 4373.8ms (0 queries, 0 cached) | GC: 18.3ms)
+
+
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (289.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUserAttendee Load (214.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (303.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (192.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-29 12:05:22.960536"], ["updated_at", "2024-11-29 12:05:22.960536"], ["event_id", 1]]
+  [1m[36mTRANSACTION (504.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendee Load (212.3ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-12345"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (338.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (487.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-12345"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (298.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (297.7ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-12345"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:26.129882"], ["updated_at", "2024-11-29 12:05:26.129882"]]
+  [1m[36mTRANSACTION (228.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendee Load (282.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-12365"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (170.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Exists? (611.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-12365"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (607.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (312.9ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "TICKET-12365"], ["name", "Pepe Doe"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:28.180257"], ["updated_at", "2024-11-29 12:05:28.180257"]]
+  [1m[36mTRANSACTION (302.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAttendeeLog Load (310.1ms)[0m  [1m[34mSELECT "attendee_logs".* FROM "attendee_logs" WHERE "attendee_logs"."attendee_id" = $1 AND "attendee_logs"."description" = $2 LIMIT $3[0m  [["attendee_id", 2], ["description", "Initial log entry."], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (500.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendeeLog Create (1359.6ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["attendee_id", 2], ["description", "Initial log entry."], ["created_at", "2024-11-29 12:05:30.652199"], ["updated_at", "2024-11-29 12:05:30.652199"]]
+  [1m[36mTRANSACTION (463.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (306.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (659.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 3], ["created_at", "2024-11-29 12:05:32.482290"], ["updated_at", "2024-11-29 12:05:32.482290"], ["event_id", 1]]
+  [1m[36mTRANSACTION (455.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (416.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (159.5ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (147.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (136.9ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (186.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "1"], ["name", "Santiago"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:34.789582"], ["updated_at", "2024-11-29 12:05:34.789582"]]
+  [1m[36mTRANSACTION (267.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (161.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (235.2ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (148.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "2"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (144.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (139.7ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "2"], ["name", "Laura"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:35.965556"], ["updated_at", "2024-11-29 12:05:35.965556"]]
+  [1m[36mTRANSACTION (195.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (191.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (149.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (141.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "3"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (190.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (198.1ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "3"], ["name", "Carolina"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:36.987853"], ["updated_at", "2024-11-29 12:05:36.987853"]]
+  [1m[36mTRANSACTION (209.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (216.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (395.4ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (505.9ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_attendee_id", 1], ["event_id", 1], ["title", "concierto Shakira"], ["description", "Concierto en Medellin"], ["created_at", "2024-11-29 12:05:39.557799"], ["updated_at", "2024-11-29 12:05:39.557799"]]
+  [1m[36mTRANSACTION (714.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (356.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (709.9ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 4], ["created_at", "2024-11-29 12:05:40.783102"], ["updated_at", "2024-11-29 12:05:40.783102"], ["event_id", 2]]
+  [1m[36mTRANSACTION (305.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (211.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (313.3ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (288.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "4"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (313.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (187.0ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 2], ["ticket_id", "4"], ["name", "Carmen"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:42.938519"], ["updated_at", "2024-11-29 12:05:42.938519"]]
+  [1m[36mTRANSACTION (414.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (317.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (305.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (306.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "5"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (297.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (311.4ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 2], ["ticket_id", "5"], ["name", "Sara"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:05:44.780329"], ["updated_at", "2024-11-29 12:05:44.780329"]]
+  [1m[36mTRANSACTION (186.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (720.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (309.4ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (416.9ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "6"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (356.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (1158.6ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 2], ["ticket_id", "6"], ["name", "Gertrudis"], ["email", "[FILTERED]"], ["status", false], ["created_at", "2024-11-29 12:05:47.095126"], ["updated_at", "2024-11-29 12:05:47.095126"]]
+  [1m[36mTRANSACTION (306.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (574.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (243.9ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (305.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_attendee_id", 2], ["event_id", 1], ["title", "concierto Shakira"], ["description", "Concierto en Medellin"], ["created_at", "2024-11-29 12:05:49.389489"], ["updated_at", "2024-11-29 12:05:49.389489"]]
+  [1m[36mTRANSACTION (301.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (303.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (620.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-29 12:05:50.000701"], ["updated_at", "2024-11-29 12:05:50.000701"], ["event_id", 3]]
+  [1m[36mTRANSACTION (296.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (299.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (312.9ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (302.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (295.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (311.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (300.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (285.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (218.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "2"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (492.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (338.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (197.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (309.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (298.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "3"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (167.4ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (512.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (235.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (306.7ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (398.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_attendee_id", 3], ["event_id", 2], ["title", "Pasar a Globant"], ["description", "Los 15 coders que pasaran a Globant"], ["created_at", "2024-11-29 12:05:56.155764"], ["updated_at", "2024-11-29 12:05:56.155764"]]
+  [1m[36mTRANSACTION (213.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (298.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (493.7ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 2], ["created_at", "2024-11-29 12:05:56.772482"], ["updated_at", "2024-11-29 12:05:56.772482"], ["event_id", 4]]
+  [1m[36mTRANSACTION (414.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (308.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (304.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (173.5ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (226.1ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (202.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (210.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (502.9ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (209.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "2"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (299.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (313.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (299.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (346.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (259.4ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_attendee_id", 4], ["event_id", 3], ["title", "MeetUp Rails"], ["description", "MeetUp Rails in Riwi"], ["created_at", "2024-11-29 12:06:01.109767"], ["updated_at", "2024-11-29 12:06:01.109767"]]
+  [1m[36mTRANSACTION (412.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (199.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (513.0ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 10], ["created_at", "2024-11-29 12:06:01.786959"], ["updated_at", "2024-11-29 12:06:01.786959"], ["event_id", 101]]
+  [1m[36mTRANSACTION (397.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (304.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Create (919.3ms)[0m  [1m[32mINSERT INTO "user_attendees" ("quantity_tickets", "created_at", "updated_at", "event_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity_tickets", 5], ["created_at", "2024-11-29 12:06:02.702628"], ["updated_at", "2024-11-29 12:06:02.702628"], ["event_id", 102]]
+  [1m[36mTRANSACTION (214.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (296.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (303.0ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (306.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-20011"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (310.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (191.6ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 6], ["ticket_id", "TICKET-20011"], ["name", "John Doe"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:06:05.068798"], ["updated_at", "2024-11-29 12:06:05.068798"]]
+  [1m[36mTRANSACTION (498.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (226.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (293.8ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (309.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-20021"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (398.2ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (208.8ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 6], ["ticket_id", "TICKET-20021"], ["name", "Jane Smith"], ["email", "[FILTERED]"], ["status", false], ["created_at", "2024-11-29 12:06:07.003602"], ["updated_at", "2024-11-29 12:06:07.003602"]]
+  [1m[36mTRANSACTION (307.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (303.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (258.8ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (348.6ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "TICKET-20031"], ["LIMIT", 1]]
+  [1m[36mAttendee Exists? (310.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAttendee Create (298.5ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 7], ["ticket_id", "TICKET-20031"], ["name", "Alex Johnson"], ["email", "[FILTERED]"], ["status", true], ["created_at", "2024-11-29 12:06:08.756598"], ["updated_at", "2024-11-29 12:06:08.756598"]]
+  [1m[36mTRANSACTION (194.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (415.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (405.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (210.1ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["attendee_id", 9], ["description", "Attendee checked in at the event."], ["created_at", "2024-11-29 12:06:10.381903"], ["updated_at", "2024-11-29 12:06:10.381903"]]
+  [1m[36mTRANSACTION (300.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (255.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendee Load (361.2ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAttendeeLog Create (302.5ms)[0m  [1m[32mINSERT INTO "attendee_logs" ("attendee_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["attendee_id", 10], ["description", "Attendee attended workshop A."], ["created_at", "2024-11-29 12:06:11.519615"], ["updated_at", "2024-11-29 12:06:11.519615"]]
+  [1m[36mTRANSACTION (305.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (402.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (537.8ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (173.6ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_attendee_id", 6], ["event_id", 101], ["title", "No Alcohol Policy"], ["description", "No alcohol is allowed at the event."], ["created_at", "2024-11-29 12:06:13.076890"], ["updated_at", "2024-11-29 12:06:13.076890"]]
+  [1m[36mTRANSACTION (506.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (212.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserAttendee Load (308.4ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAttendeeRule Create (295.1ms)[0m  [1m[32mINSERT INTO "attendee_rules" ("user_attendee_id", "event_id", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_attendee_id", 6], ["event_id", 102], ["title", "Entry Time"], ["description", "Attendees should arrive 30 minutes before the event starts."], ["created_at", "2024-11-29 12:06:14.287776"], ["updated_at", "2024-11-29 12:06:14.287776"]]
+  [1m[36mTRANSACTION (408.1ms)[0m  [1m[35mCOMMIT[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, and [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/1/attendees/summary/assistants" for 127.0.0.1 at 2024-11-29 07:19:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (263.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#assistants as JSON
+  Parameters: {"event_id"=>"1"}
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 07:20:05 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 341ms (Views: 336.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 84.5ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 07:20:06 -0500
+Processing by OasRails::OasRailsController#index as JSON
+  [1m[36mAttendee Load (4989.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:79:in `assistants'
+Completed 200 OK in 7649ms (Views: 0.2ms | ActiveRecord: 9715.0ms (1 query, 0 cached) | GC: 99.1ms)
+
+
+Completed 200 OK in 5981ms (Views: 0.1ms | ActiveRecord: 3296.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1/attendees/summary/assistants" for 127.0.0.1 at 2024-11-29 07:20:29 -0500
+Processing by AttendeesController#assistants as JSON
+  Parameters: {"event_id"=>"1"}
+  [1m[36mAttendee Load (493.6ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees"[0m
+  ↳ app/controllers/attendees_controller.rb:79:in `assistants'
+Completed 200 OK in 497ms (Views: 0.1ms | ActiveRecord: 493.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-29 07:20:42 -0500
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/santiago/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/user_attendees/show_user_attendees" for 127.0.0.1 at 2024-11-29 07:20:54 -0500
+Processing by UserAttendeesController#show_user_attendees as JSON
+  [1m[36mUserAttendee Load (242.7ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees"[0m
+  ↳ app/controllers/user_attendees_controller.rb:4:in `show_user_attendees'
+Completed 200 OK in 1070ms (Views: 5.7ms | ActiveRecord: 1063.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
