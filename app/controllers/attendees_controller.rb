@@ -27,10 +27,6 @@ class AttendeesController < ApplicationController
     params.require(:attendee).permit(:ticket_id, :name, :email, :status)
   end
 
-  # @summary Returns a list of Attendees.
-  #
-  # @parameter size(query) [Integer]  Used for pagination of response data (default: 5 items per response).
-  # @parameter page(query) [Integer]   choose the numer of pages you want to see
   def summary
     # params[:event_id] returns the id of the event sent in the URL
     #

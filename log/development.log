@@ -10103,3 +10103,78 @@ Processing by UserAttendeesController#show_user_attendees as JSON
 Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mTURSO_AUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-28 20:46:07.403164', '2024-11-28 20:46:07.403171') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserAttendees (20241121182420)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendees (20241121182519)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "ticket_id" varchar, "name" varchar, "email" varchar, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182519') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendeeRules (20241121182535)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "attendee_rules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_attendee_id" integer, "event_id" integer, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182535') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAttendeeLogs (20241121182547)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "attendee_logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee_id" integer NOT NULL, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fccc1d8582"
+FOREIGN KEY ("attendee_id")
+  REFERENCES "attendees" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_attendee_logs_on_attendee_id" ON "attendee_logs" ("attendee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121182547') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ModifyUserAttendees (20241126113810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","user_id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","user_id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auser_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auser_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "user_attendees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "user_attendees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity_tickets" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "event_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "user_attendees" ("id","quantity_tickets","created_at","updated_at")
+                     SELECT "id","quantity_tickets","created_at","updated_at" FROM "auser_attendees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "auser_attendees"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241126113810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mTURSO_AUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mTURSO_AUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mTURSO_AUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
