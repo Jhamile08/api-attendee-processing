@@ -10388,3 +10388,20 @@ Completed 200 OK in 1070ms (Views: 5.7ms | ActiveRecord: 1063.4ms (1 query, 0 ca
 [dotenv] Loaded [33m.env[0m
 [dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 08:45:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (193.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 163ms (Views: 159.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 08:45:42 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 6666ms (Views: 0.2ms | ActiveRecord: 4201.7ms (0 queries, 0 cached) | GC: 42.2ms)
+
+
