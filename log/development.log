@@ -10386,3 +10386,5 @@ Completed 200 OK in 1070ms (Views: 5.7ms | ActiveRecord: 1063.4ms (1 query, 0 ca
 
 [dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m

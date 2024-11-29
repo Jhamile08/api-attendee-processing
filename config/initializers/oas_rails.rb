@@ -42,10 +42,11 @@ OasRails.configure do |config|
   config.info.contact.url = 'https://a-chacon.com'
 
   # Servers Information. For more details follow: https://spec.openapis.org/oas/latest.html#server-object
-  config.servers = [{ url: 'URL_Aplication_remote', description: 'production' }, { url: 'http://localhost:3000', description: 'Local' }]
+  config.servers = [{ url: 'https://api-attendee-processing.onrender.com/', description: 'production' },
+                    { url: 'http://localhost:3000', description: 'Local' }]
 
   # Tag Information. For more details follow: https://spec.openapis.org/oas/latest.html#tag-object
-  config.tags = [{ name: "Attendees", description: "Manage the attendees api" }]
+  config.tags = [{ name: 'Attendees', description: 'Manage the attendees api' }]
 
   # Optional Settings (Uncomment to use)
 
