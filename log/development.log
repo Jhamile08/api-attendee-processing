@@ -10384,3 +10384,5 @@ Processing by UserAttendeesController#show_user_attendees as JSON
 Completed 200 OK in 1070ms (Views: 5.7ms | ActiveRecord: 1063.4ms (1 query, 0 cached) | GC: 0.3ms)
 
 
+[dotenv] Set [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
