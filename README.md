@@ -1,16 +1,14 @@
 # API : Attendee Processing
 
 ## Description
----
 Manage registration, confirmation, cancellation, and processing of event attendees.
   
--> Deployment | Render DB **PostgreSql**
+### Deployment | Render DB PostgreSql
 https://api-attendee-processing.onrender.com/
 - **Version:** 1.0  
 - **Status:** Under development
 
 ## Authors 
----
 - @Jhamile08
 - @santiagocherrys
 - @NewNobbie
@@ -18,7 +16,6 @@ https://api-attendee-processing.onrender.com/
 - @MateoBermudezMoncada
 
 ## Use Case Examples
----
   This API is part of a larger system, interacting with:
   - `API_generation_tickets` | ticket generation
     
@@ -27,7 +24,6 @@ https://api-attendee-processing.onrender.com/
   - It also supports managing multiple tickets associated with events via an admin interface (`UserAttendee`)
 
 ## Installation and running
----
 
 1. Clone the repository:  
    ```bash
@@ -46,7 +42,6 @@ https://api-attendee-processing.onrender.com/
    rails s
 
 ### Extra - Configuration 
----
 - **Ruby on Rails**
   - `ruby` -> `3.2.5`
 - **Gems**  
@@ -56,14 +51,26 @@ https://api-attendee-processing.onrender.com/
   - `"rack-cors"`
   - `"faker"`
   - `"kaminari"`
-
-3. Endpoints Overview
-    GET	```/attendees/:attendee_id/logs```         | Show all the logs history (Done) -> To consume into API reports
-    GET  ```/events/:event_id/attendees/summary``` | Provide a summary of the assistants status (Done)
-    POST	```/events/:event_id/attendees```        | Allow to do one or many registers (Done)
-    GET	```/user_attendees/show_user_Attendees```  | Send the array with quantity of tickets requirements   (Done)
-    PATCH  ```/attendees/:attendee_id/confirm```   | Change the status (Done)
-    PATCH  ```/attendees/:attendee_id/cancel```    | Change the status (Done)
+    
+##Endpoints Overview
+- Show all the logs history (Done) -> To consume into API reports
+    ```bash
+    GET	/attendees/:attendee_id/logs
+- Provide a summary of the assistants status (Done)
+    ```bash
+    GET  /events/:event_id/attendees/summary 
+- Allow to do one or many registers (Done)
+    ```bash
+    POST  /events/:event_id/attendees 
+- Send the array with quantity of tickets requirements   (Done)
+    ```bash
+    GET	/user_attendees/show_user_Attendees
+- Change the status to confirm
+    ```bash
+    PATCH  /attendees/:attendee_id/confirm
+- Change the status (Done) 
+    ```bash
+    PATCH  /attendees/:attendee_id/cancel
 
 
 3.1 Endpoints To Consume
@@ -72,8 +79,6 @@ https://api-attendee-processing.onrender.com/
 
 
 MIT License
-
-Copyright (c) [2024] [Jhamile08]
 
 Copyright (c) [2024] [Jhamile08]
 
