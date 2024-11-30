@@ -2,7 +2,7 @@
 
 Manage registration, confirmation, cancellation, and processing of event attendees.
   
-## Deployment Details
+### Deployment Details
 
 | Platform       | Database       | URL                                                                 |
 |----------------|----------------|---------------------------------------------------------------------|
