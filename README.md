@@ -6,7 +6,7 @@ Manage registration, confirmation, cancellation, and processing of event attende
 
 | Platform       | Database       | URL                                                                 |
 |----------------|----------------|---------------------------------------------------------------------|
-| Render         | PostgreSQL     | [API Attendee Processing](https://api-attendee-processing.onrender.com/) |
+| Render         | PostgreSQL     | [API Attendee Processing](https://api-attendee-processing.onrender.com/docs) |
 
 - **Version:** 1.0  
 - **Status:** Under development
