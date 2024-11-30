@@ -56,22 +56,22 @@ Manage registration, confirmation, cancellation, and processing of event attende
   - `"kaminari"`
     
 ## Endpoints Overview
-- Show all the logs history (Done) -> To consume into API reports
+- Show all the logs history -> To consume into API reports
     ```bash
     GET	/attendees/:attendee_id/logs
-- Provide a summary of the assistants status (Done)
+- Provide a summary of the assistants status
     ```bash
     GET  /events/:event_id/attendees/summary 
-- Allow to do one or many registers (Done)
+- Allow to do one or many registers
     ```bash
     POST  /events/:event_id/attendees 
-- Send the array with quantity of tickets requirements   (Done)
+- Send the array with quantity of tickets requirements
     ```bash
     GET	/user_attendees/show_user_Attendees
 - Change the status to confirm
     ```bash
     PATCH  /attendees/:attendee_id/confirm
-- Change the status (Done) 
+- Change the status to cancel
     ```bash
     PATCH  /attendees/:attendee_id/cancel
 
