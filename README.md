@@ -2,8 +2,12 @@
 
 Manage registration, confirmation, cancellation, and processing of event attendees.
   
-## Deployment  |  Render DB PostgreSql
-https://api-attendee-processing.onrender.com/
+## Deployment Details
+
+| Platform       | Database       | URL                                                                 |
+|----------------|----------------|---------------------------------------------------------------------|
+| Render         | PostgreSQL     | [API Attendee Processing](https://api-attendee-processing.onrender.com/) |
+
 - **Version:** 1.0  
 - **Status:** Under development
 
@@ -73,7 +77,6 @@ https://api-attendee-processing.onrender.com/
 
 
 ### Endpoints To Consume
-
     GET tickets waiting for the URL
 
 
