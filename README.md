@@ -1,19 +1,18 @@
 # API : Attendee Processing
 
-## Description
 Manage registration, confirmation, cancellation, and processing of event attendees.
   
-### Deployment | Render DB PostgreSql
+## Deployment  |  Render DB PostgreSql
 https://api-attendee-processing.onrender.com/
 - **Version:** 1.0  
 - **Status:** Under development
 
 ## Authors 
-- @Jhamile08
-- @santiagocherrys
-- @NewNobbie
-- @darwingx990
-- @MateoBermudezMoncada
+- [@Jhamile08](https://github.com/Jhamile08)
+- [@santiagocherrys](https://github.com/santiagocherrys)
+- [@NewNobbie](https://github.com/NewNobbie)
+- [@darwingx990](https://github.com/darwingx990)
+- [@MateoBermudezMoncada](https://github.com/MateoBermudezMoncada)
 
 ## Use Case Examples
   This API is part of a larger system, interacting with:
