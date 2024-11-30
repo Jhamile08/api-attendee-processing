@@ -52,7 +52,7 @@ https://api-attendee-processing.onrender.com/
   - `"faker"`
   - `"kaminari"`
     
-##Endpoints Overview
+## Endpoints Overview
 - Show all the logs history (Done) -> To consume into API reports
     ```bash
     GET	/attendees/:attendee_id/logs
@@ -73,7 +73,7 @@ https://api-attendee-processing.onrender.com/
     PATCH  /attendees/:attendee_id/cancel
 
 
-3.1 Endpoints To Consume
+### Endpoints To Consume
 
     GET tickets waiting for the URL
 
