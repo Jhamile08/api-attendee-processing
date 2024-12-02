@@ -260,12 +260,9 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
-<<<<<<< HEAD
-  kaminari
-=======
   dotenv-rails
   faker
->>>>>>> develop
+  kaminari
   oas_rails
   pg (~> 1.1)
   puma (>= 5.0)

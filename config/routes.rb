@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   mount OasRails::Engine => '/docs'
 
   # POST /events/:event_id/attendees
-  get '/events/:event_id/attendees' => 'attendees#create_attendees'
+  get '/events/:event_id/attendees/:quantity/user_attendee/:user_attendee_id' => 'attendees#create_attendees'
   get 'user_attendees/show_user_attendees', to: 'user_attendees#show_user_attendees'
   get '/events/:event_id/attendees/summary' => 'attendees#summary'
   get '/events/:event_id/attendees/summary/assistants' => 'attendees#assistants'

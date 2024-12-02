@@ -60,14 +60,14 @@ class AttendeesController < ApplicationController
     @attendees.each do |attendee|
       tickets['tickets'].each do |ticket|
         next unless attendee.ticket_id.to_i == ticket[:id]
-        
-        if params[:event_id].to_i == ticket[:event_id]
-          all_attendees_for_event << attendee
-          if attendee.status
-            true_attendees += 1
-          else
-            false_attendees += 1
-          end
+
+        next unless params[:event_id].to_i == ticket[:event_id]
+
+        all_attendees_for_event << attendee
+        if attendee.status
+          true_attendees += 1
+        else
+          false_attendees += 1
         end
       end
     end
@@ -77,7 +77,7 @@ class AttendeesController < ApplicationController
 
     # Get the `size` (records per page) and `pages` (number of pages to show) from params
     items_per_page = @size # Default to 2 if not provided
-    total_pages_to_show = p@page  # Default to 1 page if not provided
+    total_pages_to_show = p @page # Default to 1 page if not provided
 
     # Prepare an array to store the requested paginated pages
     paginated_pages = []
@@ -87,7 +87,7 @@ class AttendeesController < ApplicationController
       # Calculate the start and end indexes for the current page
       start_index = (page_number - 1) * items_per_page
       end_index = start_index + items_per_page - 1
-      
+
       # Slice the array to get the items for the current page
       page_items = items[start_index..end_index]
 
@@ -104,10 +104,10 @@ class AttendeesController < ApplicationController
     render json: {
       pages: paginated_pages,
       meta: {
-        total_pages: (items.size / items_per_page.to_f).ceil,  # Total number of pages for all records
-        total_count: items.size,  # Total number of records
-        current_page: @page,  # Current page
-        per_page: items_per_page  # Number of records per page
+        total_pages: (items.size / items_per_page.to_f).ceil, # Total number of pages for all records
+        total_count: items.size, # Total number of records
+        current_page: @page, # Current page
+        per_page: items_per_page # Number of records per page
       }
     }
   end
@@ -193,15 +193,19 @@ class AttendeesController < ApplicationController
 
   def create_attendees
     # Crear una instancia del servicio y obtener los tickets
-    # ticket_service = TicketService.new("https://api.ejemplo.com/tickets")
-    #
-
+    @events_id = params[:event_id]
+    @quantity = params[:quantity]
+    @user_attendee = params[:user_attendee_id]
+    ticket_service = TicketService.new(@events_id, @quantity)
+    result = ticket_service.get_tickets
+    puts 'este debe de ser el array de tickets'
+    tickets = result[:data]
     # tickets = ticket_service.fetch_tickets
-    tickets = {
-      'tickets' => [
-        { 'id' => 14 }
-      ]
-    }
+    # tickets = {
+    #   'tickets' => [
+    #     { 'id' => 14 }
+    #   ]
+    # }
     begin
       ActiveRecord::Base.transaction do
         tickets_array = tickets['tickets']
@@ -209,9 +213,9 @@ class AttendeesController < ApplicationController
 
         tickets_array.each do |ticket|
           attendee = Attendee.create!(
-            user_attendee_id: 1,
+            user_attendee_id: @user_attendee,
             name: Faker::Name.name,
-            email: 'jhamiledr222@gmail.com',
+            email: Faker::Internet.email(domain: 'gmail.com'),
             ticket_id: ticket['id'],
             status: false
           )

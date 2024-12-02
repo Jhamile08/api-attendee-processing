@@ -10405,3 +10405,451 @@ Processing by OasRails::OasRailsController#index as JSON
 Completed 200 OK in 6666ms (Views: 0.2ms | ActiveRecord: 4201.7ms (0 queries, 0 cached) | GC: 42.2ms)
 
 
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-11-29 14:12:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (307.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 192ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 43.5ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:12:14 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:12:15 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 3238ms (Views: 0.1ms | ActiveRecord: 1533.5ms (0 queries, 0 cached) | GC: 23.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:14:04 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:14:04 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 606ms (Views: 0.1ms | ActiveRecord: 555.2ms (0 queries, 0 cached) | GC: 19.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-29 14:14:24 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:14:29 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:14:29 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 526ms (Views: 0.1ms | ActiveRecord: 495.0ms (0 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:24:01 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-11-29 14:24:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:24:02 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 4732ms (Views: 0.1ms | ActiveRecord: 2775.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:24:24 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:24:24 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 660ms (Views: 0.1ms | ActiveRecord: 627.1ms (0 queries, 0 cached) | GC: 4.8ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:25:01 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:25:04 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 501ms (Views: 0.1ms | ActiveRecord: 461.9ms (0 queries, 0 cached) | GC: 3.8ms)
+
+
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (300.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-11-29 14:32:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (207.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 111ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:32:35 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:32:36 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 7025ms (Views: 0.2ms | ActiveRecord: 4062.7ms (0 queries, 0 cached) | GC: 48.5ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:33:15 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:33:15 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 683ms (Views: 0.1ms | ActiveRecord: 553.2ms (0 queries, 0 cached) | GC: 96.8ms)
+
+
+Started GET "/docs" for 127.0.0.1 at 2024-11-29 14:33:29 -0500
+Processing by OasRails::OasRailsController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-11-29 14:33:30 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Completed 200 OK in 776ms (Views: 0.1ms | ActiveRecord: 738.3ms (0 queries, 0 cached) | GC: 4.8ms)
+
+
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mAttendee Load (306.8ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (200.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (203.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (203.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (307.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-12-02 07:28:47 -0500
+Started GET "/docs" for 127.0.0.1 at 2024-12-02 07:28:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (303.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OasRails::OasRailsController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/oas_rails-0.8.2/app/views/oas_rails/oas_rails/index.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 170ms (Views: 166.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Rendering /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andrea/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 223ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 13.4ms)
+
+
+Started GET "/docs.json" for 127.0.0.1 at 2024-12-02 07:28:55 -0500
+Processing by OasRails::OasRailsController#index as JSON
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-12-02 07:28:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Completed 200 OK in 3799ms (Views: 0.1ms | ActiveRecord: 2165.4ms (0 queries, 0 cached) | GC: 57.4ms)
+
+
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "//events/7/attendees/1/user_attendee/1" for ::1 at 2024-12-02 07:39:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (296.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#create_attendees as */*
+  Parameters: {"event_id"=>"7", "quantity"=>"1", "user_attendee_id"=>"1"}
+  [1m[36mTRANSACTION (306.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mUserAttendee Load (406.8ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (302.3ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "14"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (159.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (154.2ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "14"], ["name", "Audrie Ondricka"], ["email", "[FILTERED]"], ["status", false], ["created_at", "2024-12-02 12:39:41.571532"], ["updated_at", "2024-12-02 12:39:41.571532"]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 9db24af2-426c-485e-a7ed-d352f645e6c7) to Async(default) with arguments: "AttendeeMailer", "confirmation_email", "deliver_now", {:args=>[#<GlobalID:0x000078ba833530c0 @uri=#<URI::GID gid://api-attendee-processing/Attendee/12>>]}
+[ActiveJob] ↳ app/controllers/attendees_controller.rb:222:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (254.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/attendees_controller.rb:210:in `create_attendees'
+Completed 200 OK in 10757ms (Views: 0.4ms | ActiveRecord: 5865.8ms (4 queries, 0 cached) | GC: 20.4ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   [1m[36mAttendee Load (124.7ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7] Performing ActionMailer::MailDeliveryJob (Job ID: 9db24af2-426c-485e-a7ed-d352f645e6c7) from Async(default) enqueued at 2024-12-02T12:39:42.026809827Z with arguments: "AttendeeMailer", "confirmation_email", "deliver_now", {:args=>[#<GlobalID:0x000078ba831faa70 @uri=#<URI::GID gid://api-attendee-processing/Attendee/12>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendering attendee_mailer/confirmation_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendered attendee_mailer/confirmation_email.html.erb within layouts/mailer (Duration: 0.5ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendering attendee_mailer/confirmation_email.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendered attendee_mailer/confirmation_email.text.erb within layouts/mailer (Duration: 0.3ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7]   Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7] AttendeeMailer#confirmation_email: processed outbound mail in 22.1ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7] Delivered mail 674daa8e4db78_38665564-3c0@andrea.mail (1649.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7] Date: Mon, 02 Dec 2024 07:39:42 -0500
+From: erlindr@hotmail.com
+To: jhamiledr222@gmail.com
+Message-ID: <674daa8e4db78_38665564-3c0@andrea.mail>
+Subject: Confirma tu asistencia
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_674daa8e4ce29_38665564-4c6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_674daa8e4ce29_38665564-4c6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Attendee#confirmation_email
+
+, find me in app/views/attendee_mailer/confirmation_email.text.erb
+
+
+----==_mimepart_674daa8e4ce29_38665564-4c6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/attendee_mailer/confirmation_email.html.erb --><=
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=3D"UTF-8">
+    <title>Confirmaci=C3=B3n de asistencia</title>
+  </head>
+  <body>
+    <p>Hola Audrie Ondricka,</p>
+    <p>Por favor, confirma tu asistencia haciendo clic en el siguiente en=
+lace:</p>
+    <p>
+      <a href=3D"http://localhost:3000/attendees/12/confirm">Confirmar as=
+istencia</a>
+    </p>
+  </body>
+</html>
+<!-- END app/views/attendee_mailer/confirmation_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+----==_mimepart_674daa8e4ce29_38665564-4c6--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [9db24af2-426c-485e-a7ed-d352f645e6c7] Performed ActionMailer::MailDeliveryJob (Job ID: 9db24af2-426c-485e-a7ed-d352f645e6c7) from Async(default) in 1930.76ms
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (284.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (324.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (144.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (296.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (303.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (308.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (302.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (312.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (302.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (309.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (426.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (312.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (270.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (306.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (418.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (231.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (307.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (170.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+[dotenv] Set [36mDB_USERNAME[0m, [36mDB_PASSWORD[0m, [36mDB_HOST[0m, [36mDB_PORT[0m, [36mDATABASE_URL[0m, [36mSECRET_KEY_BASE[0m, [36mSENDGRID_USERNAME[0m, [36mSENDGRID_API_KEY[0m, [36mSENDGRID_DOMAIN[0m, [36mTURSO_DATABASE_URL[0m, and [36mAUTH_TOKEN[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "//events/7/attendees/1/user_attendee/1" for ::1 at 2024-12-02 07:44:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (405.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AttendeesController#create_attendees as */*
+  Parameters: {"event_id"=>"7", "quantity"=>"1", "user_attendee_id"=>"1"}
+Completed 500 Internal Server Error in 2183ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+I18n::MissingTranslationData (Translation missing: en.faker.name.email):
+
+Causes:
+I18n::MissingTranslationData (Translation missing: en.faker.name.email)
+  
+app/controllers/attendees_controller.rb:218:in `block (2 levels) in create_attendees'
+app/controllers/attendees_controller.rb:214:in `each'
+app/controllers/attendees_controller.rb:214:in `block in create_attendees'
+app/controllers/attendees_controller.rb:210:in `create_attendees'
+Started GET "//events/7/attendees/1/user_attendee/1" for ::1 at 2024-12-02 07:44:35 -0500
+Processing by AttendeesController#create_attendees as */*
+  Parameters: {"event_id"=>"7", "quantity"=>"1", "user_attendee_id"=>"1"}
+Completed 500 Internal Server Error in 778ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+NameError (uninitialized constant Faker::Email):
+  
+app/controllers/attendees_controller.rb:218:in `block (2 levels) in create_attendees'
+app/controllers/attendees_controller.rb:214:in `each'
+app/controllers/attendees_controller.rb:214:in `block in create_attendees'
+app/controllers/attendees_controller.rb:210:in `create_attendees'
+Started GET "//events/7/attendees/1/user_attendee/1" for ::1 at 2024-12-02 07:46:08 -0500
+Processing by AttendeesController#create_attendees as */*
+  Parameters: {"event_id"=>"7", "quantity"=>"1", "user_attendee_id"=>"1"}
+  [1m[36mTRANSACTION (164.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mUserAttendee Load (149.1ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (458.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (175.7ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (130.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/attendees_controller.rb:210:in `create_attendees'
+Completed 422 Unprocessable Content in 8775ms (Views: 0.2ms | ActiveRecord: 5467.0ms (3 queries, 0 cached) | GC: 5.5ms)
+
+
+Started GET "//events/6/attendees/1/user_attendee/1" for ::1 at 2024-12-02 07:47:00 -0500
+Processing by AttendeesController#create_attendees as */*
+  Parameters: {"event_id"=>"6", "quantity"=>"1", "user_attendee_id"=>"1"}
+  [1m[36mTRANSACTION (521.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mUserAttendee Load (604.9ms)[0m  [1m[34mSELECT "user_attendees".* FROM "user_attendees" WHERE "user_attendees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (154.0ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."ticket_id" = $1 LIMIT $2[0m  [["ticket_id", "38"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Exists? (169.8ms)[0m  [1m[34mSELECT 1 AS one FROM "attendees" WHERE "attendees"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+  [1m[36mAttendee Create (177.3ms)[0m  [1m[32mINSERT INTO "attendees" ("user_attendee_id", "ticket_id", "name", "email", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_attendee_id", 1], ["ticket_id", "38"], ["name", "Hildegarde Erdman"], ["email", "[FILTERED]"], ["status", false], ["created_at", "2024-12-02 12:47:02.685841"], ["updated_at", "2024-12-02 12:47:02.685841"]]
+  ↳ app/controllers/attendees_controller.rb:215:in `block (2 levels) in create_attendees'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 35893f04-c5d6-45ee-8323-229aaa3aa4d6) to Async(default) with arguments: "AttendeeMailer", "confirmation_email", "deliver_now", {:args=>[#<GlobalID:0x00007e4b01dcb3e0 @uri=#<URI::GID gid://api-attendee-processing/Attendee/13>>]}
+[ActiveJob] ↳ app/controllers/attendees_controller.rb:222:in `block (2 levels) in create_attendees'
+  [1m[36mTRANSACTION (397.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/attendees_controller.rb:210:in `create_attendees'
+Completed 200 OK in 2973ms (Views: 0.1ms | ActiveRecord: 2024.0ms (4 queries, 0 cached) | GC: 2.8ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   [1m[36mAttendee Load (158.1ms)[0m  [1m[34mSELECT "attendees".* FROM "attendees" WHERE "attendees"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6] Performing ActionMailer::MailDeliveryJob (Job ID: 35893f04-c5d6-45ee-8323-229aaa3aa4d6) from Async(default) enqueued at 2024-12-02T12:47:03.287572989Z with arguments: "AttendeeMailer", "confirmation_email", "deliver_now", {:args=>[#<GlobalID:0x00007e4b01d6c9f8 @uri=#<URI::GID gid://api-attendee-processing/Attendee/13>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendering attendee_mailer/confirmation_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendered attendee_mailer/confirmation_email.html.erb within layouts/mailer (Duration: 0.4ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendered layout layouts/mailer.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendering attendee_mailer/confirmation_email.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendered attendee_mailer/confirmation_email.text.erb within layouts/mailer (Duration: 0.2ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6]   Rendered layout layouts/mailer.text.erb (Duration: 0.5ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6] AttendeeMailer#confirmation_email: processed outbound mail in 15.0ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6] Delivered mail 674dac4793769_42bb954c197d0@andrea.mail (3982.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6] Date: Mon, 02 Dec 2024 07:47:03 -0500
+From: erlindr@hotmail.com
+To: delmy.harris@gmail.com
+Message-ID: <674dac4793769_42bb954c197d0@andrea.mail>
+Subject: Confirma tu asistencia
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_674dac4792a64_42bb954c1961d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_674dac4792a64_42bb954c1961d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Attendee#confirmation_email
+
+, find me in app/views/attendee_mailer/confirmation_email.text.erb
+
+
+----==_mimepart_674dac4792a64_42bb954c1961d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/attendee_mailer/confirmation_email.html.erb --><=
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=3D"UTF-8">
+    <title>Confirmaci=C3=B3n de asistencia</title>
+  </head>
+  <body>
+    <p>Hola Hildegarde Erdman,</p>
+    <p>Por favor, confirma tu asistencia haciendo clic en el siguiente en=
+lace:</p>
+    <p>
+      <a href=3D"http://localhost:3000/attendees/13/confirm">Confirmar as=
+istencia</a>
+    </p>
+  </body>
+</html>
+<!-- END app/views/attendee_mailer/confirmation_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+----==_mimepart_674dac4792a64_42bb954c1961d--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [35893f04-c5d6-45ee-8323-229aaa3aa4d6] Performed ActionMailer::MailDeliveryJob (Job ID: 35893f04-c5d6-45ee-8323-229aaa3aa4d6) from Async(default) in 4291.27ms
